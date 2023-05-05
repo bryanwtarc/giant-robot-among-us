@@ -55,7 +55,7 @@
 	void Draw::sphere(float r) {
 			GLUquadricObj* sphere = NULL;
 			sphere = gluNewQuadric();
-			gluQuadricDrawStyle(sphere, GLU_FILL);
+			gluQuadricDrawStyle(sphere, GLU_LINE);
 			gluQuadricTexture(sphere, true);			//For Texturing
 			gluSphere(sphere, r, 30, 30);
 			gluDeleteQuadric(sphere);
@@ -65,9 +65,8 @@
 
 			GLUquadricObj* cylinder = NULL; // create a quadric obj pointer
 			cylinder = gluNewQuadric();		// create a quadric obj
-			gluQuadricDrawStyle(cylinder, GLU_FILL);		// SET THE DRAW STYLE 
+			gluQuadricDrawStyle(cylinder, GLU_LINE);		// SET THE DRAW STYLE 
 
-			gluQuadricTexture(cylinder, true);				//For Texturing
 			gluCylinder(cylinder, br, tr, h, 30, 30);		// gluCylinder (base radius, top radius, height, slice, stack)
 
 			gluDeleteQuadric(cylinder);			// delete the quadric obj
@@ -78,7 +77,7 @@
 			cylinder = gluNewQuadric();		// create a quadric obj
 			gluQuadricDrawStyle(cylinder, GLU_FILL);		// SET THE DRAW STYLE 
 
-			gluCylinder(cylinder, 0, tr, h, 15, 5);		// gluCylinder (base radius, top radius, height, slice, stack)
+			gluCylinder(cylinder, 0, tr, h, 30, 30);		// gluCylinder (base radius, top radius, height, slice, stack)
 
 			gluDeleteQuadric(cylinder);			// delete the quadric obj
 		}

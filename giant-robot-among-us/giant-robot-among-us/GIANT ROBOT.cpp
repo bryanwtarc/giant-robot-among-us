@@ -8,12 +8,13 @@
 #define WINDOW_TITLE "OpenGL Window"
 
 /* PROJECTION VARIABLES */
-bool	isOrtho = true;
+bool	isOrtho = false;
 float	tx = 0, tz = 0, tSpeed = 1,			//translate in z-axis with tSpeed
 		Onear = -10, Ofar = 10,				//Ortho view's near and far
-		Pnear = 1, Pfar = 21,				//Perspective view's near and far
+		Pnear = 5, Pfar = 21,				//Perspective view's near and far
 		pTx = 0, pTy = 0, pTSpeed = 0.1,	//Translation(Tx, Ty) for projection
-		pRy = 0, pRSpeed = 1,				//Rotate projection in Y axis
+		pRy = 0, pRySpeed = 1,				//Rotate projection in Y axis
+		pRx = 0, pRxSpeed = 1,				//Rotate projection in X axis
 		s1radius = 3.0;						//Radius of sphere
 /*-------------------*/
 
@@ -46,10 +47,10 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		/* ---------------- */
 
 		/* PERSPECTIVE CONTROL */
-		else if (wParam == VK_LEFT) pRy += pRSpeed;		//Rotate projection in Y axis	(LEFT)
-		else if (wParam == VK_RIGHT) pRy -= pRSpeed;	//Rotate projection in Y axis	(RIGHT)
-		//else if (wParam == VK_UP)	
-		//else if (wParam == VK_DOWN)
+		else if (wParam == VK_LEFT) pRy += pRySpeed;		//Rotate projection in Y axis	(LEFT)
+		else if (wParam == VK_RIGHT) pRy -= pRySpeed;	//Rotate projection in Y axis	(RIGHT)
+		else if (wParam == VK_UP) pRx += pRxSpeed;
+		else if (wParam == VK_DOWN) pRx -= pRxSpeed;
 		/* ------------------- */
 
 		break;
@@ -116,26 +117,27 @@ void lighting() {
 }
 
 void projection() {
+	double frustum = 10;
 	glMatrixMode(GL_PROJECTION);	//refer to projection matrix
 	glLoadIdentity();				//reset the projection matrix
 	glTranslatef(pTx, pTy, 0);		//translate projection
 	glRotatef(pRy, 0, 1, 0);		//Rotate in y for projection
+	glRotatef(pRx, 1, 0, 0);
 
 	if (isOrtho) {
-		//Ortho view : default
+		//Ortho view 
 		glOrtho(-10, 10, -10, 10, Onear, Ofar);
 	}
 	else {
-		//Perspective view
+		//Perspective view : default
 		gluPerspective(20, 1, -1, 1);
-		glFrustum(-10, 10, -10, 10, Pnear, Pfar);
+		glFrustum(-(frustum),frustum, -(frustum), frustum, Pnear, Pfar);
 	}
 }
 
 void display() {
 	Draw draw;
 	LondonBridge bridge;
-
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
