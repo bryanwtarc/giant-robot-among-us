@@ -1,10 +1,12 @@
 ﻿  GIANT ROBOT.cpp
-F:\COLLEGE\College Archive\Y2S2\Graphics Programming\Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(15,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-F:\COLLEGE\College Archive\Y2S2\Graphics Programming\Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(16,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-F:\COLLEGE\College Archive\Y2S2\Graphics Programming\Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(164,29): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\COLLEGE\College Archive\Y2S2\Graphics Programming\Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(165,29): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\COLLEGE\College Archive\Y2S2\Graphics Programming\Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(166,15): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\COLLEGE\College Archive\Y2S2\Graphics Programming\Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(168,29): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\COLLEGE\College Archive\Y2S2\Graphics Programming\Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(169,29): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\COLLEGE\College Archive\Y2S2\Graphics Programming\Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(170,15): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-  giant-robot-among-us.vcxproj -> F:\COLLEGE\College Archive\Y2S2\Graphics Programming\Assignment\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(99,31): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(100,31): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(101,17): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(103,31): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(104,31): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(105,17): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(14,34): warning C4305: 'initializing': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(23,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(24,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(140,17): warning C4305: 'argument': truncation from 'double' to 'float'
+  giant-robot-among-us.vcxproj -> F:\temp\GP Assignment\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe

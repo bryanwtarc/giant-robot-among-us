@@ -18,5 +18,11 @@
     <ClCompile Include="GIANT ROBOT.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Draw Functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="London Bridge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
