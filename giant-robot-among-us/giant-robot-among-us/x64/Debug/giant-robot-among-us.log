@@ -1,12 +1,6 @@
 ﻿  GIANT ROBOT.cpp
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(99,31): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(100,31): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(101,17): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(103,31): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(104,31): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Draw Functions.cpp(105,17): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(14,34): warning C4305: 'initializing': truncation from 'double' to 'float'
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(23,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(15,34): warning C4305: 'initializing': truncation from 'double' to 'float'
 F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(24,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(140,17): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(25,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(136,7): warning C4101: 'draw': unreferenced local variable
   giant-robot-among-us.vcxproj -> F:\temp\GP Assignment\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe

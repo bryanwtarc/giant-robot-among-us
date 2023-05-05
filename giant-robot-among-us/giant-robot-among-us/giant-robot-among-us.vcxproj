@@ -128,9 +128,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Draw Functions.cpp" />
+    <ClCompile Include="DrawFunctions.cpp" />
     <ClCompile Include="GIANT ROBOT.cpp" />
-    <ClCompile Include="London Bridge.cpp" />
+    <ClCompile Include="LondonBridge.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DrawFunctions.h" />
+    <ClInclude Include="LondonBridge.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

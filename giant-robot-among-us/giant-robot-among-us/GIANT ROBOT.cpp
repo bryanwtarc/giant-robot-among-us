@@ -2,7 +2,8 @@
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include <math.h>
-#include "Draw Functions.cpp"
+#include "DrawFunctions.h"
+#include "LondonBridge.h"
 
 #define WINDOW_TITLE "OpenGL Window"
 
@@ -133,12 +134,14 @@ void projection() {
 
 void display() {
 	Draw draw;
+	LondonBridge bridge;
+
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
 
 	projection();
-	draw.sphere(0.4);
+	bridge.londonBridge();
 
 	//A M O N G     U S
 	//T E S T

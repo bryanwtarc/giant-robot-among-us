@@ -2,10 +2,9 @@
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include <math.h>
+#include "DrawFunctions.h"
 
-class Draw {
-	public:
-		void cube(float size) {
+	void Draw::cube(float size) {
 			glBegin(GL_QUADS);
 
 			//Face 1 : Bottom
@@ -53,7 +52,7 @@ class Draw {
 			glEnd();
 		}
 
-		void sphere(float r) {
+	void Draw::sphere(float r) {
 			GLUquadricObj* sphere = NULL;
 			sphere = gluNewQuadric();
 			gluQuadricDrawStyle(sphere, GLU_FILL);
@@ -62,7 +61,7 @@ class Draw {
 			gluDeleteQuadric(sphere);
 		}
 
-		void cylinder(float br, float tr, float h) {
+	void Draw::cylinder(float br, float tr, float h) {
 
 			GLUquadricObj* cylinder = NULL; // create a quadric obj pointer
 			cylinder = gluNewQuadric();		// create a quadric obj
@@ -74,7 +73,7 @@ class Draw {
 			gluDeleteQuadric(cylinder);			// delete the quadric obj
 		}
 
-		void cone(float tr, float h) {
+	void Draw::cone(float tr, float h) {
 			GLUquadricObj* cylinder = NULL; // create a quadric obj pointer
 			cylinder = gluNewQuadric();		// create a quadric obj
 			gluQuadricDrawStyle(cylinder, GLU_FILL);		// SET THE DRAW STYLE 
@@ -84,7 +83,7 @@ class Draw {
 			gluDeleteQuadric(cylinder);			// delete the quadric obj
 		}
 
-		void sphereWithoutGLU() {
+	void Draw::sphereWithoutGLU() {
 			const float PI = 3.141592f;
 			GLfloat x, y, z, sliceA, stackA;
 			GLfloat radius = 0.5;
@@ -109,7 +108,7 @@ class Draw {
 			}
 		}
 
-		void pyramid(float size) {
+	void Draw::pyramid(float size) {
 
 			glBegin(GL_POLYGON);
 			glLineWidth(1.5);
@@ -130,4 +129,3 @@ class Draw {
 
 			glEnd();
 		}
-};
