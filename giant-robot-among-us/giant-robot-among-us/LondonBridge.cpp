@@ -7,19 +7,33 @@
 
 	
 void LondonBridge::londonBridge() {
-	glColor3f(1, 0, 0);
+	
+	/*First tower*/
 	glPushMatrix();
-		glTranslatef(-0.5, 0, 0);
+		glColor3f(1, 0, 0);
+		glTranslatef(-0.8, 0, 0);
 		cube(0.5);
-		glTranslatef(0, 0.3, 0);
+		glTranslatef(0, 0.5, 0);
 		cube(0.5);
 	glPopMatrix();
+	glPushMatrix();
+		glColor3f(0, 0, 1);
+		glRotatef(-90, 1, 0, 0);
+		glTranslatef(-0.3, 0, 0);
+		cylinder(0.05, 0.05, 1.0);
+	glPopMatrix();
+	/*------------*/
 
+	/*Second Tower*/
 	glPushMatrix();
-		glTranslatef(0.5, 0, 0);
+		glColor3f(1, 0, 0);
+		glTranslatef(0.8, 0, 0);
 		cube(0.5);
-		glTranslatef(0, 0.3, 0);
+		glTranslatef(0, 0.5, 0);
 		cube(0.5);
 	glPopMatrix();
+	/*------------*/
+
+	
 }
 

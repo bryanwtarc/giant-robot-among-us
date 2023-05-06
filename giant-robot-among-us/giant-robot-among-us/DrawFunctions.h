@@ -14,13 +14,19 @@ class Draw {
 
 		void lineSphere(float r);
 
-		void cylinder(float br, float tr, float h);
+		void lineCylinder(float br, float tr, float h);
 
-		void cone(float tr, float h);
+		void fullCylinder(float br, float tr, float h);
+
+		void lineCone(float tr, float h);
+
+		void fullCone(float tr, float h);
 
 		void sphereWithoutGLU();
 
-		void pyramid(float size);
+		void linePyramid(float size);
+
+		void fullPyramid(float size);
 };
 
 #endif

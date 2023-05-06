@@ -13,7 +13,7 @@ float	rotate = 0, speed = 1;
 
 /* PROJECTION VARIABLES */
 bool	isOrtho = false;
-float	tx = 0, tz = 0, tSpeed = 1,			//translate in z-axis with tSpeed
+float	tx = 0, tz = 0, tSpeed = 0.5,			//translate in z-axis with tSpeed
 		Onear = -10, Ofar = 10,				//Ortho view's near and far
 		Pnear = 1, Pfar = 20,				//Perspective view's near and far
 		pTx = 0, pTy = 0, pTSpeed = 0.1,	//Translation(Tx, Ty) for projection

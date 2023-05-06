@@ -1,11 +1,6 @@
-﻿  GIANT ROBOT.cpp
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(19,34): warning C4305: 'initializing': truncation from 'double' to 'float'
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(29,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(30,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(150,7): warning C4101: 'draw': unreferenced local variable
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(152,9): warning C4101: 'gundam': unreferenced local variable
-  LondonBridge.cpp
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(14,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(21,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-  Generating Code...
+﻿  LondonBridge.cpp
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(14,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(22,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(23,27): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(30,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
   giant-robot-among-us.vcxproj -> F:\temp\GP Assignment\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe

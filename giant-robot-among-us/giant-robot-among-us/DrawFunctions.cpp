@@ -64,7 +64,7 @@ void Draw::lineSphere(float r) {
 	gluDeleteQuadric(sphere);
 }
 
-void Draw::cylinder(float br, float tr, float h) {
+void Draw::lineCylinder(float br, float tr, float h) {
 		GLUquadricObj* cylinder = NULL; // create a quadric obj pointer
 		cylinder = gluNewQuadric();		// create a quadric obj
 		gluQuadricDrawStyle(cylinder, GLU_LINE);		// SET THE DRAW STYLE 
@@ -74,15 +74,35 @@ void Draw::cylinder(float br, float tr, float h) {
 		gluDeleteQuadric(cylinder);			// delete the quadric obj
 }
 
-void Draw::cone(float tr, float h) {
+void Draw::fullCylinder(float br, float tr, float h) {
+	GLUquadricObj* cylinder = NULL; // create a quadric obj pointer
+	cylinder = gluNewQuadric();		// create a quadric obj
+	gluQuadricDrawStyle(cylinder, GLU_FILL);		// SET THE DRAW STYLE 
+
+	gluCylinder(cylinder, br, tr, h, 30, 30);		// gluCylinder (base radius, top radius, height, slice, stack)
+
+	gluDeleteQuadric(cylinder);			// delete the quadric obj
+}
+
+void Draw::lineCone(float tr, float h) {
 		GLUquadricObj* cylinder = NULL; // create a quadric obj pointer
 		cylinder = gluNewQuadric();		// create a quadric obj
-		gluQuadricDrawStyle(cylinder, GLU_FILL);		// SET THE DRAW STYLE 
+		gluQuadricDrawStyle(cylinder, GLU_LINE);		// SET THE DRAW STYLE 
 
 		gluCylinder(cylinder, 0, tr, h, 30, 30);		// gluCylinder (base radius, top radius, height, slice, stack)
 
 		gluDeleteQuadric(cylinder);			// delete the quadric obj
 	}
+
+void Draw::fullCone(float tr, float h) {
+	GLUquadricObj* cylinder = NULL; // create a quadric obj pointer
+	cylinder = gluNewQuadric();		// create a quadric obj
+	gluQuadricDrawStyle(cylinder, GLU_FILL);		// SET THE DRAW STYLE 
+
+	gluCylinder(cylinder, 0, tr, h, 30, 30);		// gluCylinder (base radius, top radius, height, slice, stack)
+
+	gluDeleteQuadric(cylinder);			// delete the quadric obj
+}
 
 void Draw::sphereWithoutGLU() {
 		const float PI = 3.141592f;
@@ -109,9 +129,9 @@ void Draw::sphereWithoutGLU() {
 		}
 	}
 
-void Draw::pyramid(float size) {
+void Draw::linePyramid(float size) {
 
-		glBegin(GL_POLYGON);
+		glBegin(GL_LINE_LOOP);
 		glLineWidth(1.5);
 
 		//Base
@@ -130,3 +150,26 @@ void Draw::pyramid(float size) {
 
 		glEnd();
 	}
+
+void Draw::fullPyramid(float size) {
+
+	glBegin(GL_POLYGON);
+	glLineWidth(1.5);
+
+	//Base
+	glVertex3f(0.0, 0.0, size);
+	glVertex3f(size, 0.0, size);
+	glVertex3f(size, 0.0, 0.0);
+	glVertex3f(0.0, 0.0, 0.0);
+	glVertex3f(size / 2, size, size / 2);
+	glVertex3f(0.0, 0.0, size);
+	glVertex3f(size / 2, size, size / 2);
+	glVertex3f(size, 0.0, size);
+	glVertex3f(size / 2, size, size / 2);
+	glVertex3f(size, 0.0, 0.0);
+	glVertex3f(size / 2, size, size / 2);
+	glVertex3f(0.0, 0.0, 0.0);
+
+	glEnd();
+}
+
