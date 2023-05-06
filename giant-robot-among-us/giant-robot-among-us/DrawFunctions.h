@@ -8,6 +8,8 @@
 
 class Draw {
 	public:
+		void quad(float size);
+
 		void cube(float size);
 
 		void fullSphere(float r);

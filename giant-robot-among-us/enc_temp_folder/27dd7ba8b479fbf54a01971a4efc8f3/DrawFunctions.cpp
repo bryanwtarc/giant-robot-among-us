@@ -180,5 +180,5 @@ void Draw::fullPyramid(float size) {
 	glVertex3f(size / 2, size, size / 2);
 	glVertex3f(0.0, 0.0, 0.0);
 
-	glEnd(); 
+	glEnd(); //Daniel Testing
 }

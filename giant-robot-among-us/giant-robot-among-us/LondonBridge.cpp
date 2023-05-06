@@ -7,7 +7,7 @@
 
 	
 void LondonBridge::londonBridge() {
-	
+
 	/*First tower*/
 	glPushMatrix();
 		glColor4f(0.45, 0.45, 0.45, 1);

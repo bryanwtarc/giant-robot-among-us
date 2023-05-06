@@ -5,8 +5,6 @@
 #include "DrawFunctions.h"
 #include "Gundam.h"
 
-
-
 void Gundam::head() {
 	lineSphere(0.2);
 }
