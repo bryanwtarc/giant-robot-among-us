@@ -5,46 +5,46 @@
 #include "DrawFunctions.h"
 
 void Draw::cube(float size) {
-		glBegin(GL_QUADS);
 
-		//Face 1 : Bottom
-		glVertex3f(0.0, 0.0, size);
-		glVertex3f(size, 0.0, size);
-		glVertex3f(size, 0.0, 0.0);
-		glVertex3f(0.0, 0.0, 0.0); //Face 2 must connect with this point
+	glBegin(GL_QUADS);
 
-		//Face 2 : Left
-		glVertex3f(0.0, 0.0, 0.0);
-		glVertex3f(0.0, size, 0.0);
-		glVertex3f(0.0, size, size);
-		glVertex3f(0.0, 0.0, size);
+	//Face 1: bottom (front)
+	glVertex3f(0.0, 0.0, size);
+	glVertex3f(size, 0.0, size);
+	glVertex3f(size, 0.0, 0.0);
+	glVertex3f(0.0, 0.0, 0.0);
 
-		//Face 3 : Front
-		glVertex3f(0.0, 0.0, size);
-		glVertex3f(0.0, size, size);
-		glVertex3f(size, size, size);
-		glVertex3f(size, 0.0, size);
+	//Face 2: left
+	glVertex3f(0.0, 0.0, 0.0);
+	glVertex3f(0.0, size, 0.0);
+	glVertex3f(0.0, size, size);
+	glVertex3f(0.0, 0.0, size);
 
-		//Face 4 : Right
-		glVertex3f(size, 0.0, size);
-		glVertex3f(size, size, size);
-		glVertex3f(size, size, 0.0);
-		glVertex3f(size, 0.0, 0.0);
+	//Face 3: front (top)
+	glVertex3f(0.0, 0.0, size);
+	glVertex3f(0.0, size, size);
+	glVertex3f(size, size, size);
+	glVertex3f(size, 0.0, size);
 
-		//Face 5 : Bottom
-		glVertex3f(size, 0.0, 0.0);
-		glVertex3f(0.0, 0.0, 0.0);
-		glVertex3f(0.0, size, 0.0);
-		glVertex3f(size, size, 0.0);
+	//Face 4: right
+	glVertex3f(size, 0.0, size);
+	glVertex3f(size, size, size);
+	glVertex3f(size, size, 0.0);
+	glVertex3f(size, 0.0, 0.0);
 
-		//Face 6 : Back
-		glVertex3f(size, size, 0.0);
-		glVertex3f(0.0, size, 0.0);
-		glVertex3f(0.0, size, size);
-		glVertex3f(size, size, size);
+	//Face 5:  bottom
+	glVertex3f(size, 0.0, 0.0);
+	glVertex3f(0.0, 0.0, 0.0);
+	glVertex3f(0.0, size, 0.0);
+	glVertex3f(size, size, 0.0);
 
-		glEnd();
-	}
+	//Face 6: back
+	glVertex3f(size, size, 0.0);
+	glVertex3f(0.0, size, 0.0);
+	glVertex3f(0.0, size, size);
+	glVertex3f(size, size, size);
+	glEnd();
+}
 
 void Draw::fullSphere(float r) {
 		GLUquadricObj* sphere = NULL;
