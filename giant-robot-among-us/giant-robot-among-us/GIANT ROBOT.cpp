@@ -158,10 +158,9 @@ void display() {
 	glMatrixMode(GL_MODELVIEW);
 
 	glPushMatrix();
-	glRotatef(rotate, 0, 1, 0);
-	glTranslatef(0, 0, tz);
-	draw.cylinder(0.2, 0.2, 1.0);
-	bridge.londonBridge();
+		glRotatef(rotate, 0, 1, 0);
+		glTranslatef(0, 0, tz);
+		bridge.londonBridge();
 	glPopMatrix();
 
 	//A M O N G     U S

@@ -5,7 +5,7 @@
 #include "DrawFunctions.h"
 
 void Draw::cube(float size) {
-		glBegin(GL_LINE_LOOP);
+		glBegin(GL_QUADS);
 
 		//Face 1 : Bottom
 		glVertex3f(0.0, 0.0, size);
