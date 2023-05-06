@@ -9,7 +9,7 @@
 #define WINDOW_TITLE "OpenGL Window"
 
 /* ROTATION VARIABLES */
-float	rotate = 0, speed = 1;
+float	rotateX = 0, rotateY = 0, speed = 1.5;
 
 /* PROJECTION VARIABLES */
 bool	isOrtho = false;
@@ -23,7 +23,7 @@ float	tx = 0, tz = 0, tSpeed = 0.5,			//translate in z-axis with tSpeed
 /*-------------------*/
 
 /* LIGHTING VARIABLES */
-bool	lightOn = true;
+bool	lightOn = false;
 float	amb[] = { 1, 0, 0 },		//Red color ambient light
 		dif[] = { 1, 0, 0 },		//Red color diffuse light
 		posA[] = { 0, 0.8, 0 },		//Position for ambient lighting
@@ -65,8 +65,10 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		/* ------------------- */
 
 		/* ROTATION CONTROL */
-		else if (wParam == VK_NUMPAD4) rotate += speed;
-		else if (wParam == VK_NUMPAD6) rotate -= speed;
+		else if (wParam == VK_NUMPAD4) rotateY += speed;
+		else if (wParam == VK_NUMPAD6) rotateY -= speed;
+		else if (wParam == VK_NUMPAD8) rotateX += speed;
+		else if (wParam == VK_NUMPAD2) rotateX -= speed;
 		/* ---------------- */
 		break;
 
@@ -154,17 +156,19 @@ void display() {
 	LondonBridge bridge;
 	Gundam gundam;
 
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClearColor(0.5, 0.7, 1, 1);
 
 	lighting();
 	projection();
 	glMatrixMode(GL_MODELVIEW);
 
 	glPushMatrix();
-		glRotatef(rotate, 0, 1, 0);
 		glTranslatef(0, 0, tz);
-		glColor3f(1.0, 0, 0);
+		glRotatef(rotateY, 0, 1, 0);
+		glRotatef(rotateX, 1, 0, 0);
+		glTranslatef(0, -0.3, 0);
 		bridge.londonBridge();
 	glPopMatrix();
 
