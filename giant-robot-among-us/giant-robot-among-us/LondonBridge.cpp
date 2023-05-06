@@ -20,7 +20,7 @@ void LondonBridge::londonBridge() {
 		glColor3f(0, 0, 1);
 		glRotatef(-90, 1, 0, 0);
 		glTranslatef(-0.3, 0, 0);
-		cylinder(0.05, 0.05, 1.0);
+		fullCylinder(0.05, 0.05, 1.0);
 	glPopMatrix();
 	/*------------*/
 

@@ -43,6 +43,10 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 	case WM_KEYDOWN:   
 		if (wParam == VK_ESCAPE) PostQuitMessage(0);
 
+		/* LIGHTING CONTROL */
+		else if (wParam == VK_TAB) lightOn = !lightOn;			//Switch lighting on/off
+		/* ---------------- */
+
 		/* MOVEMENT CONTROL */
 		//else if (wParam == 0x57) 	//W
 		//else if (wParam == 0x53)	//S
@@ -55,9 +59,9 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		else if (wParam == VK_RIGHT) pRy -= pRySpeed;			//Rotate projection in Y axis	(RIGHT)
 		else if (wParam == VK_UP) pRx += pRxSpeed;				//Rotate projection in X axis	(UP)
 		else if (wParam == VK_DOWN) pRx -= pRxSpeed;			//Rotate projection in X axis	(DOWN)
-		else if (wParam == VK_CONTROL) isOrtho = !isOrtho;		//Change to Ortho/Perspective
-		else if (wParam == 0x45) tz += tSpeed;
-		else if (wParam == 0x51) tz -= tSpeed;
+		else if (wParam == VK_CONTROL) isOrtho = !isOrtho;		//Switch Ortho/Perspective 
+		else if (wParam == 0x45) tz += tSpeed;					//Near
+		else if (wParam == 0x51) tz -= tSpeed;					//Far
 		/* ------------------- */
 
 		/* ROTATION CONTROL */
@@ -128,7 +132,6 @@ void lighting() {
 }
 
 void projection() {
-	double frustum = 11;
 	glMatrixMode(GL_PROJECTION);	//refer to projection matrix
 	glLoadIdentity();				//reset the projection matrix
 	glTranslatef(pTx, pTy, 0);		//translate projection
@@ -142,7 +145,7 @@ void projection() {
 	else {
 		//Perspective view : default
 		gluPerspective(20, 1, -1, 1);
-		glFrustum(-(frustum),frustum, -(frustum), frustum, Pnear, Pfar);
+		glFrustum(-8, 8, -6, 6, Pnear, Pfar);
 	}
 }
 
@@ -154,12 +157,14 @@ void display() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
 
+	lighting();
 	projection();
 	glMatrixMode(GL_MODELVIEW);
 
 	glPushMatrix();
 		glRotatef(rotate, 0, 1, 0);
 		glTranslatef(0, 0, tz);
+		glColor3f(1.0, 0, 0);
 		bridge.londonBridge();
 	glPopMatrix();
 
