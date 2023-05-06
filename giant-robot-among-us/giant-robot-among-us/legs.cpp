@@ -5,13 +5,17 @@
 #include "legs.h"
 
 void Legs::gundamLegs() {
+	Draw draw;
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glEnable(GL_DEPTH_TEST);
 	
 	//feet
-	glScalef(3.0, 3.0, 3.0);
+	glPushMatrix();
+	glScalef(10.0, 10.0, 10.0);
 	glPushMatrix();
 		glBegin(GL_QUADS);
+		glColor3f(1.0, 0.5, 0);
 		//face 1
 		glVertex3f(0.1, -0.15, 0);
 		glVertex3f(0.1, -0.2, 0);
@@ -38,14 +42,15 @@ void Legs::gundamLegs() {
 		glVertex3f(0.05, -0.2, 0);
 		glVertex3f(0.05, -0.2, 0.025);
 		//face 6
-		glVertex3f(0.1, -0.15, 0.025);
-		glVertex3f(0.1, -0.15, 0.025);
-		glVertex3f(0.1, -0.15, 0);
-		glVertex3f(0.05, -0.15, 0);
+		glVertex3f(0.05, -0.2, 0.025);
+		glVertex3f(0.1, -0.2, 0.025);
+		glVertex3f(0.1, -0.2, 0);
+		glVertex3f(0.05, -0.2, 0);
 		glEnd();
 		
 		//SOLE OF FEET
 		glBegin(GL_QUADS);
+		glColor3f(1.0, 0.5, 0.5);
 		//face 1
 		glVertex3f(0.025,  -0.2, 0.025);
 		glVertex3f(0.025,  -0.15, 0.025);
@@ -79,7 +84,8 @@ void Legs::gundamLegs() {
 		glEnd();
 
 		//Face of feet
-		glBegin(GL_POLYGON);
+		glBegin(GL_QUADS);
+		glColor3f(0, 1.0, 0.5);
 		//face 1
 		glVertex3f(0.1, -0.2, 0.025);
 		glVertex3f(0.1, -0.15, 0.025);
@@ -111,6 +117,13 @@ void Legs::gundamLegs() {
 		glVertex3f(0, -0.2, 0.025);
 		glVertex3f(0.1, -0.2, 0.025);
 		glEnd();
+	
+	glPopMatrix();
+	glPopMatrix();
 
-		glPopMatrix();
+
+	
+	glPushMatrix();
+
+	glPopMatrix();
 }

@@ -5,6 +5,7 @@
 #include "DrawFunctions.h"
 #include "LondonBridge.h"
 #include "Gundam.h"
+#include "legs.h"
 
 #define WINDOW_TITLE "OpenGL Window"
 
@@ -155,6 +156,7 @@ void display() {
 	Draw draw;
 	LondonBridge bridge;
 	Gundam gundam;
+	Legs leg;
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
@@ -173,6 +175,10 @@ void display() {
 		bridge.londonBridge();
 	glPopMatrix();
 
+	//glPushMatrix();
+	//glRotatef(0.2, 1.0, 0, 0);
+	//	leg.gundamLegs();
+	//glPopMatrix();
 	//A M O N G     U S
 	//T E S T
 	//T E S T 2
