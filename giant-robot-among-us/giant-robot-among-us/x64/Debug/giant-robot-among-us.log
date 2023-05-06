@@ -1,8 +1,26 @@
-﻿  DrawFunctions.cpp
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\DrawFunctions.cpp(119,30): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\DrawFunctions.cpp(120,30): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\DrawFunctions.cpp(121,16): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\DrawFunctions.cpp(123,30): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\DrawFunctions.cpp(124,30): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\DrawFunctions.cpp(125,16): warning C4244: '=': conversion from 'double' to 'GLfloat', possible loss of data
+﻿  LondonBridge.cpp
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(13,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(16,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(17,32): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(19,32): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(23,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(24,32): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(26,32): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(30,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(32,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(36,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(37,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(48,33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(51,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(52,33): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(54,33): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(58,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(59,33): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(61,33): warning C4305: 'argument': truncation from 'double' to 'float'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(65,33): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(67,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(71,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(72,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(79,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\LondonBridge.cpp(80,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
   giant-robot-among-us.vcxproj -> F:\temp\GP Assignment\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe
