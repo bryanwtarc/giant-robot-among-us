@@ -9,13 +9,13 @@
 #define WINDOW_TITLE "OpenGL Window"
 
 /* ROTATION VARIABLES */
-float	rotate = 0, speed = 0.5;
+float	rotate = 0, speed = 1;
 
 /* PROJECTION VARIABLES */
 bool	isOrtho = false;
 float	tx = 0, tz = 0, tSpeed = 1,			//translate in z-axis with tSpeed
 		Onear = -10, Ofar = 10,				//Ortho view's near and far
-		Pnear = 5, Pfar = 21,				//Perspective view's near and far
+		Pnear = 1, Pfar = 20,				//Perspective view's near and far
 		pTx = 0, pTy = 0, pTSpeed = 0.1,	//Translation(Tx, Ty) for projection
 		pRy = 0, pRySpeed = 2,				//Rotate projection in Y axis
 		pRx = 0, pRxSpeed = 2,				//Rotate projection in X axis
@@ -53,9 +53,11 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		/* PERSPECTIVE CONTROL */
 		else if (wParam == VK_LEFT) pRy += pRySpeed;			//Rotate projection in Y axis	(LEFT)
 		else if (wParam == VK_RIGHT) pRy -= pRySpeed;			//Rotate projection in Y axis	(RIGHT)
-		else if (wParam == VK_UP) pRx += pRxSpeed;
-		else if (wParam == VK_DOWN) pRx -= pRxSpeed;
+		else if (wParam == VK_UP) pRx += pRxSpeed;				//Rotate projection in X axis	(UP)
+		else if (wParam == VK_DOWN) pRx -= pRxSpeed;			//Rotate projection in X axis	(DOWN)
 		else if (wParam == VK_CONTROL) isOrtho = !isOrtho;		//Change to Ortho/Perspective
+		else if (wParam == 0x45) tz += tSpeed;
+		else if (wParam == 0x51) tz -= tSpeed;
 		/* ------------------- */
 
 		/* ROTATION CONTROL */
@@ -157,12 +159,14 @@ void display() {
 
 	glPushMatrix();
 	glRotatef(rotate, 0, 1, 0);
-	draw.cylinder(0.5, 0.5, 0.8);
+	glTranslatef(0, 0, tz);
+	draw.cylinder(0.2, 0.2, 1.0);
+	bridge.londonBridge();
 	glPopMatrix();
 
 	//A M O N G     U S
 	//T E S T
-	//TEST2
+	//T E S T 2
 }
 //--------------------------------------------------------------------
 

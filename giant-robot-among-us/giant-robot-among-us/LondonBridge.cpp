@@ -9,10 +9,13 @@
 void LondonBridge::londonBridge() {
 	glColor3f(1, 0, 0);
 	glPushMatrix();
-		glRotatef(90, 1, 0, 0);
 		glTranslatef(-0.5, 0, 0);
-		lineSphere(0.5);
+		cube(0.5);
+	glPopMatrix();
 
+	glPushMatrix();
+		glTranslatef(0.5, 0, 0);
+		cube(0.5);
 	glPopMatrix();
 }
 

@@ -5,45 +5,39 @@
 #include "DrawFunctions.h"
 
 void Draw::cube(float size) {
-		glBegin(GL_QUADS);
+		glBegin(GL_LINE_LOOP);
 
 		//Face 1 : Bottom
-		glColor3f(1.0, 0.0, 0.0);
 		glVertex3f(0.0, 0.0, size);
 		glVertex3f(size, 0.0, size);
 		glVertex3f(size, 0.0, 0.0);
 		glVertex3f(0.0, 0.0, 0.0); //Face 2 must connect with this point
 
 		//Face 2 : Left
-		glColor3f(1.0, 1.0, 0.0);
 		glVertex3f(0.0, 0.0, 0.0);
 		glVertex3f(0.0, size, 0.0);
 		glVertex3f(0.0, size, size);
 		glVertex3f(0.0, 0.0, size);
 
 		//Face 3 : Front
-		glColor3f(1.0, 0.0, 1.0);
 		glVertex3f(0.0, 0.0, size);
 		glVertex3f(0.0, size, size);
 		glVertex3f(size, size, size);
 		glVertex3f(size, 0.0, size);
 
 		//Face 4 : Right
-		glColor3f(0.0, 0.0, 1.0);
 		glVertex3f(size, 0.0, size);
 		glVertex3f(size, size, size);
 		glVertex3f(size, size, 0.0);
 		glVertex3f(size, 0.0, 0.0);
 
 		//Face 5 : Bottom
-		glColor3f(0.0, 1.0, 0.0);
 		glVertex3f(size, 0.0, 0.0);
 		glVertex3f(0.0, 0.0, 0.0);
 		glVertex3f(0.0, size, 0.0);
 		glVertex3f(size, size, 0.0);
 
 		//Face 6 : Back
-		glColor3f(0.0, 1.0, 1.0);
 		glVertex3f(size, size, 0.0);
 		glVertex3f(0.0, size, 0.0);
 		glVertex3f(0.0, size, size);
