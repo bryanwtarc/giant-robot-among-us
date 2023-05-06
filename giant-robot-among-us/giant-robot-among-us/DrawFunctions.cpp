@@ -2,6 +2,7 @@
 #include <gl/GL.h>
 #include <gl/GLU.h>
 #include <math.h>
+
 #include "DrawFunctions.h"
 
 void Draw::cube(float size) {
