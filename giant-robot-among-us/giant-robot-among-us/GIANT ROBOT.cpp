@@ -156,14 +156,15 @@ void display() {
 	LondonBridge bridge;
 	Gundam gundam;
 
-	glEnable(GL_DEPTH_TEST);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glEnable(GL_DEPTH_TEST);
 	glClearColor(0.5, 0.7, 1, 1);
 
-	lighting();
+	
 	projection();
 	glMatrixMode(GL_MODELVIEW);
 
+	lighting();
 	glPushMatrix();
 		glTranslatef(0, 0, tz);
 		glRotatef(rotateY, 0, 1, 0);

@@ -131,11 +131,13 @@
     <ClCompile Include="DrawFunctions.cpp" />
     <ClCompile Include="GIANT ROBOT.cpp" />
     <ClCompile Include="Gundam.cpp" />
+    <ClCompile Include="legs.cpp" />
     <ClCompile Include="LondonBridge.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawFunctions.h" />
     <ClInclude Include="Gundam.h" />
+    <ClInclude Include="legs.h" />
     <ClInclude Include="LondonBridge.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
