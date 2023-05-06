@@ -4,8 +4,12 @@
 #include <math.h>
 #include "DrawFunctions.h"
 #include "LondonBridge.h"
+#include "Gundam.h"
 
 #define WINDOW_TITLE "OpenGL Window"
+
+/* ROTATION VARIABLES */
+float	rotate = 0, speed = 0.5;
 
 /* PROJECTION VARIABLES */
 bool	isOrtho = false;
@@ -13,8 +17,8 @@ float	tx = 0, tz = 0, tSpeed = 1,			//translate in z-axis with tSpeed
 		Onear = -10, Ofar = 10,				//Ortho view's near and far
 		Pnear = 5, Pfar = 21,				//Perspective view's near and far
 		pTx = 0, pTy = 0, pTSpeed = 0.1,	//Translation(Tx, Ty) for projection
-		pRy = 0, pRySpeed = 1,				//Rotate projection in Y axis
-		pRx = 0, pRxSpeed = 1,				//Rotate projection in X axis
+		pRy = 0, pRySpeed = 2,				//Rotate projection in Y axis
+		pRx = 0, pRxSpeed = 2,				//Rotate projection in X axis
 		s1radius = 3.0;						//Radius of sphere
 /*-------------------*/
 
@@ -47,12 +51,17 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		/* ---------------- */
 
 		/* PERSPECTIVE CONTROL */
-		else if (wParam == VK_LEFT) pRy += pRySpeed;		//Rotate projection in Y axis	(LEFT)
-		else if (wParam == VK_RIGHT) pRy -= pRySpeed;	//Rotate projection in Y axis	(RIGHT)
+		else if (wParam == VK_LEFT) pRy += pRySpeed;			//Rotate projection in Y axis	(LEFT)
+		else if (wParam == VK_RIGHT) pRy -= pRySpeed;			//Rotate projection in Y axis	(RIGHT)
 		else if (wParam == VK_UP) pRx += pRxSpeed;
 		else if (wParam == VK_DOWN) pRx -= pRxSpeed;
+		else if (wParam == VK_CONTROL) isOrtho = !isOrtho;		//Change to Ortho/Perspective
 		/* ------------------- */
 
+		/* ROTATION CONTROL */
+		else if (wParam == VK_NUMPAD4) rotate += speed;
+		else if (wParam == VK_NUMPAD6) rotate -= speed;
+		/* ---------------- */
 		break;
 
 	default:
@@ -117,12 +126,12 @@ void lighting() {
 }
 
 void projection() {
-	double frustum = 10;
+	double frustum = 11;
 	glMatrixMode(GL_PROJECTION);	//refer to projection matrix
 	glLoadIdentity();				//reset the projection matrix
 	glTranslatef(pTx, pTy, 0);		//translate projection
 	glRotatef(pRy, 0, 1, 0);		//Rotate in y for projection
-	glRotatef(pRx, 1, 0, 0);
+	glRotatef(pRx, 1, 0, 0);		//Rotate in x for projection
 
 	if (isOrtho) {
 		//Ortho view 
@@ -138,12 +147,18 @@ void projection() {
 void display() {
 	Draw draw;
 	LondonBridge bridge;
+	Gundam gundam;
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
 
 	projection();
-	bridge.londonBridge();
+	glMatrixMode(GL_MODELVIEW);
+
+	glPushMatrix();
+	glRotatef(rotate, 0, 1, 0);
+	draw.cylinder(0.5, 0.5, 0.8);
+	glPopMatrix();
 
 	//A M O N G     U S
 	//T E S T

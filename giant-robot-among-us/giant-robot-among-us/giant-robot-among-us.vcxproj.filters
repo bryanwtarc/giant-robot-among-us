@@ -24,12 +24,18 @@
     <ClCompile Include="LondonBridge.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Gundam.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="LondonBridge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gundam.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

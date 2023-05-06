@@ -10,7 +10,9 @@ class Draw {
 	public:
 		void cube(float size);
 
-		void sphere(float r);
+		void fullSphere(float r);
+
+		void lineSphere(float r);
 
 		void cylinder(float br, float tr, float h);
 

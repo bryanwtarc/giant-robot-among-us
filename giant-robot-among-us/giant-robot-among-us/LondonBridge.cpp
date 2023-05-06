@@ -11,7 +11,7 @@ void LondonBridge::londonBridge() {
 	glPushMatrix();
 		glRotatef(90, 1, 0, 0);
 		glTranslatef(-0.5, 0, 0);
-		sphere(0.5);
+		lineSphere(0.5);
 
 	glPopMatrix();
 }
