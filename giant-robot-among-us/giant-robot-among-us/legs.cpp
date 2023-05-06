@@ -4,7 +4,7 @@
 #include "DrawFunctions.h"
 #include "legs.h"
 
-void Legs::gundamLegs() {
+void Legs::gundamFeet() {
 	Draw draw;
 	glClearColor(0, 0, 0, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -120,10 +120,16 @@ void Legs::gundamLegs() {
 	
 	glPopMatrix();
 	glPopMatrix();
+}
 
-
-	
+void Legs::gundamCalf() {
+	Draw draw;
 	glPushMatrix();
-
+		draw.fullCylinder(0.1, 0.1, 0.2);
+	glPopMatrix();
+	glPushMatrix();
+	glTranslatef(0, 0, 0.2);
+		draw.fullCylinder(0.15, 0.15, 0.05);
+		draw.fullSphere(0.1);
 	glPopMatrix();
 }

@@ -9,8 +9,8 @@
 class Legs: public Draw
 {
 	public:
-
-		void gundamLegs();
+		void gundamFeet();
+		void gundamCalf();
 };
 
 #endif
