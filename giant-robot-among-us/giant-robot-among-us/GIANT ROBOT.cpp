@@ -182,11 +182,12 @@ void display() {
 
 	lighting();
 	glPushMatrix();
+		
+		/* Whole scene's transformations */
 		glTranslatef(tx, ty, tz);
 		glRotatef(rotateY, 0, 1, 0);
 		glRotatef(rotateX, 1, 0, 0);
 
-		
 		/* BRIDGE */
 		switch (bridgeOn) {		
 			case true:
