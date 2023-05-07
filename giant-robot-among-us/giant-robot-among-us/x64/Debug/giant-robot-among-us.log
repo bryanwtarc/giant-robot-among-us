@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Arms.cpp
 F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Arms.cpp(12,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\Arms.cpp(13,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
@@ -371,3 +372,17 @@ F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\UpperBody.cpp(21
 F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\UpperBody.cpp(218,11): warning C4305: 'argument': truncation from 'double' to 'float'
   Generating Code...
   giant-robot-among-us.vcxproj -> F:\temp\GP Assignment\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe
+=======
+﻿  GIANT ROBOT.cpp
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(24,34): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(34,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(35,24): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(181,29): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(207,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(221,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(236,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(267,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(268,35): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(172,7): warning C4101: 'draw': unreferenced local variable
+  giant-robot-among-us.vcxproj -> C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe
+>>>>>>> 9e389a9befbfd615d051be8f6be02b20f4c63bba
