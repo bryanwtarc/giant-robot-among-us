@@ -7,18 +7,19 @@
 #include "Head.h"
 #include "legs.h"
 #include "UpperBody.h"
+#include "Arms.h"
 
 #define WINDOW_TITLE "OpenGL Window"
 
 bool	bridgeOn = false;					//Toggle bridge
 
-/* ROTATION VARIABLES */
-float	rotateX = 0, rotateY = 0, speed = 5;
+/* TRANSFORMATION VARIABLES */
+float	rotateX = 0, rotateY = 0, speed = 5,
+		ty = 0, tz = 0, tx = 0, tSpeed = 0.5;
 
 /* PROJECTION VARIABLES */
 bool	isOrtho = false;
-float	ty = 0, tz = 0, tSpeed = 0.5,			//translate in z-axis with tSpeed
-		Onear = -10, Ofar = 10,				//Ortho view's near and far
+float	Onear = -10, Ofar = 10,				//Ortho view's near and far
 		Pnear = 1, Pfar = 30,				//Perspective view's near and far
 		pTx = 0, pTy = 0, pTSpeed = 0.1,	//Translation(Tx, Ty) for projection
 		pRy = 0, pRySpeed = 2,				//Rotate projection in Y axis
@@ -74,8 +75,10 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		/* TRANSFORMATION CONTROL */
 		else if (wParam == 0x45) tz += tSpeed;					//Near					(E)
 		else if (wParam == 0x51) tz -= tSpeed;					//Far					(Q)
-		else if (wParam == 0x31) ty += tSpeed;					//move projection up	(1)
-		else if (wParam == 0x32) ty -= tSpeed;					//move projection down	(2)
+		else if (wParam == 0x31) ty += tSpeed;					//move scene up			(1)
+		else if (wParam == 0x32) ty -= tSpeed;					//move scene down		(2)
+		else if (wParam == 0x33) tx += tSpeed;					//move scene left		(3)
+		else if (wParam == 0x34) tx -= tSpeed;					//move scene right		(4)
 		else if (wParam == VK_NUMPAD4) rotateY -= speed;
 		else if (wParam == VK_NUMPAD6) rotateY += speed;
 		else if (wParam == VK_NUMPAD8) rotateX -= speed;
@@ -171,6 +174,7 @@ void display() {
 	Head head;
 	Legs leg;
 	UpperBody upper;
+	Arms arm;
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
@@ -180,10 +184,12 @@ void display() {
 
 	lighting();
 	glPushMatrix();
-		glTranslatef(0, ty, tz);
+		
+		/* Whole scene's transformations */
+		glTranslatef(tx, ty, tz);
 		glRotatef(rotateY, 0, 1, 0);
 		glRotatef(rotateX, 1, 0, 0);
-		
+
 		/* BRIDGE */
 		switch (bridgeOn) {		
 			case true:
@@ -198,43 +204,81 @@ void display() {
 
 		/* HEAD */
 		glPushMatrix();
-		
-			upper.torso();
+			head.gundamHead();
 		glPopMatrix();
 		/* ------------*/
 
-		///* UPPERBODY */
-		//glPushMatrix();
-		//	upper.hand();
-		//glPopMatrix();
-		///* ------------*/
+		
+		glPushMatrix();
+			glScalef(3, 3, 3);
+			/* LEGS */
+			glPushMatrix();
+				//left feet
+				glPushMatrix();
+					glTranslatef(0, -0.8, 0);
+					glPushMatrix();
+					leg.gundamLegs();
+					glPopMatrix();
+					//knee and calf
+					glPushMatrix();
+					leg.gundamLowerLeg();
+					glPopMatrix();
+					glPushMatrix();
+					leg.gundamThigh();
+					glPopMatrix();
+				glPopMatrix();
+				// right leg
+				glPushMatrix();
+					glTranslatef(0, -0.8, -0.5);
+					glPushMatrix();
+					leg.gundamLegs();
+					glPopMatrix();
+					glPushMatrix();
+					leg.gundamLowerLeg();
+					glPopMatrix();
+					glPushMatrix();
+					leg.gundamThigh();
+					glPopMatrix();
+				glPopMatrix();
+			glPopMatrix();
 
-		/* UPPERBODY */
-		/*glPushMatrix();
-			upper.hand();
-		glPopMatrix();*/
-		/* ---------- */
+			/*  TORSO  */
+			glPushMatrix();
+			glTranslatef(0, -0.25, 0);
+				upper.hip();
+			glPopMatrix();
+			glPushMatrix();
+				upper.torso();
+			glPopMatrix();
+			/*  ARMS  */
+			glPushMatrix();
+				arm.upperArmLeft();
+			glPopMatrix();
+			glPushMatrix();
+				arm.lowerArmLeft();
+				glPushMatrix();
+					glRotatef(-90, 0, 1, 0);
+					glRotatef(90, 0, 0, 1);
+					glScalef(0.4, 0.4, 0.4);
+					glTranslatef(1.6, -0.3, -0.75);
+					upper.hand();	
+				glPopMatrix();
+			glPopMatrix();
+			glPushMatrix();
+				arm.lowerWristLeft();
+			glPopMatrix();
+				arm.upperArmRight();
+			glPushMatrix();
+				arm.lowerArmRight();
+			glPopMatrix();
+			glPushMatrix();
+				arm.lowerWristRight();
+			glPopMatrix();
+		glPopMatrix();
+			
 
-		///* LEGS */
-		//glPushMatrix();
-		//	glScalef(3, 3, 3);
-		//	glPushMatrix();
-		//		glTranslatef(0, -0.8, 0);
-		//		leg.mergeLegs();
-		//	glPopMatrix();
-		//	glPushMatrix();
-		//		glTranslatef(0, -0.8, -0.5);
-		//		leg.mergeLegs();
-		//	glPopMatrix();
-		//	glPushMatrix();
-		//	glTranslatef(0, -0.25, 0);
-		//		upper.hip();
-		//	glPopMatrix();
-		//	glPushMatrix();
-		//		upper.torso();
-		//	glPopMatrix();
-		//glPopMatrix();
-		///* ------------ */
+		/* ------------ */
+
 
 		
 	glPopMatrix();
