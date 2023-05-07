@@ -75,3 +75,39 @@ void UpperBody::hand() {
 	glPopMatrix();
 
 }
+
+void UpperBody::hip() {
+	// Main Hip
+	glPushMatrix();
+		glScalef(0.4, 0.4, 1.0);
+		glTranslatef(-0.15, 3.5, 0.18);
+		glColor3f(0, 0, 0);
+		lineCube(0.9);
+		glColor3f(0.2, 0.2, 1.0);
+		cube(0.9);
+	glPopMatrix();
+	glPushMatrix();
+		glScalef(0.6, 0.6, 0.2);
+		glTranslatef(-0.2, 2.25, 0.4);
+		glColor3f(0, 0, 0);
+		lineCube(0.8);
+		glColor3f(1.0, 0.2, 0.2);
+		cube(0.8);
+	glPopMatrix();
+	glPushMatrix();
+		glScalef(0.6, 0.6, 0.2);
+		glTranslatef(-0.2, 2.25, 5.1);
+		glColor3f(0, 0, 0);
+		lineCube(0.8);
+		glColor3f(1.0, 0.2, 0.2);
+		cube(0.8);
+	glPopMatrix();
+	glPushMatrix();
+		glScalef(0.6, 0.6, 0.25);
+		glTranslatef(-0.2, 2.25, 2.1);
+		glColor3f(0, 0, 0);
+		lineCube(0.8);
+		glColor3f(0.8, 0.8, 0.8);
+		cube(0.8);
+	glPopMatrix();
+}
