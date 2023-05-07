@@ -196,17 +196,20 @@ void display() {
 		//glPopMatrix();
 		///* ------------*/
 
-		/* UPPERBODY */
-		glPushMatrix();
-			upper.hand();
-		glPopMatrix();
-		/* ---------- */
+		///* UPPERBODY */
+		//glPushMatrix();
+		//	upper.hand();
+		//glPopMatrix();
+		///* ---------- */
 
-		///* LEGS */
+		/* LEGS */
 		//glPushMatrix();
 		//	leg.gundamFeet();
+		//	glScalef(10, 10, 10);
+		//	leg.gundamLThigh();
+		//	leg.gundamRThigh();
 		//glPopMatrix();
-		///* ------------ */
+		/* ------------ */
 
 		
 	glPopMatrix();
