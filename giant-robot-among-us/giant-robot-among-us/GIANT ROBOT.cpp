@@ -204,8 +204,11 @@ void display() {
 	lighting();
 	glPushMatrix();
 		
+
 		/* Whole scene's transformations */
 		glTranslatef(tx, ty, tz);
+		//Adjusts the whole robot into frame
+		glTranslatef(2, -3, -10);
 		glRotatef(rotateY, 0, 1, 0);
 		glRotatef(rotateX, 1, 0, 0);
 
@@ -297,6 +300,14 @@ void display() {
 				arm.upperArmRight();
 			glPushMatrix();
 				arm.lowerArmRight();
+				glPushMatrix();
+					glRotatef(90, 0, 0, 1);
+					glRotatef(-90, 1, 0, 0);
+					glScalef(0.4, 0.4, 0.4);
+					glScalef(1, -1, 1);
+					glTranslatef(1.6, 2.85, -0.75);
+					upper.hand();
+				glPopMatrix();
 			glPopMatrix();
 			glPushMatrix();
 				arm.lowerWristRight();
