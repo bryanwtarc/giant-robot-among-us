@@ -250,6 +250,13 @@ void display() {
 			glPushMatrix();
 				arm.lowerWristLeft();
 			glPopMatrix();
+				arm.upperArmRight();
+			glPushMatrix();
+				arm.lowerArmRight();
+			glPopMatrix();
+			glPushMatrix();
+				arm.lowerWristRight();
+			glPopMatrix();
 		glPopMatrix();
 			
 

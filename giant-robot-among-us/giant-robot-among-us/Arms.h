@@ -18,6 +18,10 @@ public:
 
 	void upperArmRight();
 
+	void lowerArmRight();
+
+	void lowerWristRight();
+
 };
 
 #endif
