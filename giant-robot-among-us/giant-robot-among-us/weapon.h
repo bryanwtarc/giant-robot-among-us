@@ -10,7 +10,8 @@
 class weapon : public Draw {
 public:
 
-
+    void gun();
+    void shield();
     void lightsaberL();
     void lightsaberR();
 };

@@ -32,6 +32,8 @@ void Arms::upperArmLeft() {
 		fullCylinder(0.1,0.1,0.35);
 		glColor3f(1, 1, 1);
 		fulldisk(0, 0.1);
+		glTranslatef(0, 0, 0.35);
+		fulldisk(0, 0.1);
 	glPopMatrix();
 	//Joint cover
 	glPushMatrix();
@@ -69,6 +71,10 @@ void Arms::lowerArmLeft() {
 		glTranslatef(0.16, 1.5, -0.15);
 		glColor3f(1.0, 0.2, 0.2);
 		fullCylinder(0.08, 0.08, 0.2);
+		glColor3f(1, 1, 1);
+		fulldisk(0, 0.08);
+		glTranslatef(0, 0, 0.2);
+		fulldisk(0, 0.08);
 	glPopMatrix();
 }
 
@@ -81,10 +87,6 @@ void Arms::lowerWristLeft() {
 		glColor3f(0.8, 0.8, 0.8);
 		cube(0.25);
 	glPopMatrix();
-}
-
-void Arms::leftArmAddons() {
-
 }
 
 void Arms::upperArmRight() {
@@ -113,6 +115,8 @@ void Arms::upperArmRight() {
 		glColor3f(1.0, 0.2, 0.2);
 		fullCylinder(0.1, 0.1, 0.35);
 		glColor3f(1, 1, 1);
+		fulldisk(0, 0.1);
+		glTranslatef(0, 0, 0.35);
 		fulldisk(0, 0.1);
 	glPopMatrix();
 	//Joint cover
@@ -151,6 +155,10 @@ void Arms::lowerArmRight() {
 		glTranslatef(0.16, 1.5, 1.1);
 		glColor3f(1.0, 0.2, 0.2);
 		fullCylinder(0.08, 0.08, 0.2);
+		glColor3f(1, 1, 1);
+		fulldisk(0, 0.08);
+		glTranslatef(0, 0, 0.2);
+		fulldisk(0, 0.08);
 	glPopMatrix();
 }
 
@@ -163,8 +171,4 @@ void Arms::lowerWristRight() {
 		glColor3f(0.8, 0.8, 0.8);
 		cube(0.25);
 	glPopMatrix();
-}
-
-void Arms::rightArmAddons() {
-
 }

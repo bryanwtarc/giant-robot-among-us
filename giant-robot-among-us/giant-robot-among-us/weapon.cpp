@@ -50,12 +50,37 @@ void weapon::lightsaberR() {
 }
 
 void weapon::gun() {
+	//Gun
 	glPushMatrix();
-		glScalef(1, 2.0, 0.8);
-		glTranslatef(0.05, 0.45, 1);
-		glColor3f(0, 0, 0);
-		lineCube(0.25);
-		glColor3f(0.8, 0.8, 0.8);
-		cube(0.25);
+	glScalef(1, 1.9, 0.3);
+	glTranslatef(0.05, 0.45, 4.65);
+	glColor3f(0, 0, 0);
+	lineCube(0.25);
+	glColor3f(0.8, 0.8, 0.8);
+	cube(0.25);
+	glPopMatrix();
+}
+
+void weapon::shield() {
+	//Shield
+	glPushMatrix();
+	glScalef(1, 2.3, 0.3);
+	glTranslatef(0.05, 0.45, -1);
+	glRotatef(45, 0, 0, 1);
+	glColor3f(0, 0, 0);
+	lineCylinder(0.5, 0.5, 0.5);
+	glColor3f(0.8, 0.8, 1.0);
+	fullCylinder(0.5, 0.5, 0.5);
+	fulldisk(0, 0.5);
+	glTranslatef(0, 0, 0.5);
+	fulldisk(0, 0.5);
+	glColor3f(0, 0, 0);
+	glTranslatef(0, 0, -0.7);
+	lineCylinder(0.1, 0.1, 0.1);
+	glColor3f(1.0, 0.2, 0.3);
+	fullCylinder(0.1, 0.1, 0.1);
+	fulldisk(0, 0.1);
+	glTranslatef(0, 0, 0.5);
+	fulldisk(0, 0.1);
 	glPopMatrix();
 }
