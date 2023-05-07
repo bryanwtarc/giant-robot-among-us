@@ -204,6 +204,9 @@ void display() {
 
 		/* HEAD */
 		glPushMatrix();
+			glTranslatef(0.5, 8, 1.85);
+			glRotatef(90, 0, 1.0, 0);
+			glScalef(1.5, 1.5, 1.5);
 			head.gundamHead();
 		glPopMatrix();
 		/* ------------*/
