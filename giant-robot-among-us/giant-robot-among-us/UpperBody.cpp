@@ -77,13 +77,32 @@ void UpperBody::hand() {
 }
 
 void UpperBody::cock() {
+	//CockBase
 	glPushMatrix();
-	glTranslatef(-0.23, 1.95, 0.825);
-	glRotatef(90, 1.0, 0.0, 0.0);
-	glColor3f(0, 0, 0);
-	lineCone(0.1, 0.3);
-	glColor3f(0.2, 0.2, 1.0);
-	fullCone(0.1, 0.3);
+		glTranslatef(0.12, 1.1, 0.6225);
+		glRotatef(90, 1.0, 0.0, 0.0);
+		glColor3f(0, 0, 0);
+		lineCylinder(0.1, 0.09, 0.02);
+		glColor3f(0.25, 0.25, 0.25);
+		fullCylinder(0.1, 0.09, 0.05);
+	glPopMatrix();
+	//CockRing
+	glPushMatrix();
+		glTranslatef(0.12, 1.05, 0.6225);
+		glRotatef(90, 1.0, 0.0, 0.0);
+		glColor3f(0, 0, 0);
+		lineCylinder(0.1, 0.09, 0.02);
+		glColor3f(0.5, 0.5, 0.5);
+		fullCylinder(0.1, 0.09, 0.05);
+	glPopMatrix();
+	//CockTip
+	glPushMatrix();
+		glTranslatef(0.12, 1, 0.6225);
+		glRotatef(90, 1.0, 0.0, 0.0);
+		glColor3f(0, 0, 0);
+		lineCylinder(0.08, 0.07, 0.02);
+		glColor3f(0.25, 0.25, 0.25);
+		fullCylinder(0.08, 0.07, 0.05);
 	glPopMatrix();
 }
 
