@@ -9,18 +9,19 @@
 
 #define WINDOW_TITLE "OpenGL Window"
 
+bool	bridgeOn = true;					//Toggle bridge
+
 /* ROTATION VARIABLES */
 float	rotateX = 0, rotateY = 0, speed = 1.5;
 
 /* PROJECTION VARIABLES */
 bool	isOrtho = false;
-float	tx = 0, tz = 0, tSpeed = 0.5,			//translate in z-axis with tSpeed
+float	ty = 0, tz = 0, tSpeed = 0.5,			//translate in z-axis with tSpeed
 		Onear = -10, Ofar = 10,				//Ortho view's near and far
-		Pnear = 3, Pfar = 10,				//Perspective view's near and far
+		Pnear = 1, Pfar = 30,				//Perspective view's near and far
 		pTx = 0, pTy = 0, pTSpeed = 0.1,	//Translation(Tx, Ty) for projection
 		pRy = 0, pRySpeed = 2,				//Rotate projection in Y axis
-		pRx = 0, pRxSpeed = 2,				//Rotate projection in X axis
-		s1radius = 3.0;						//Radius of sphere
+		pRx = 0, pRxSpeed = 2;			//Rotate projection in X axis
 /*-------------------*/
 
 /* LIGHTING VARIABLES */
@@ -44,9 +45,9 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 	case WM_KEYDOWN:   
 		if (wParam == VK_ESCAPE) PostQuitMessage(0);
 
-		/* LIGHTING CONTROL */
-		else if (wParam == VK_TAB) lightOn = !lightOn;			//Switch lighting on/off
-		/* ---------------- */
+		else if (wParam == VK_SUBTRACT) bridgeOn = !bridgeOn;		//Toggle bridge on/off (Default: On)
+
+		else if (wParam == VK_TAB) lightOn = !lightOn;				//Switch lighting on/off (Default: Off)
 
 		/* MOVEMENT CONTROL */
 		//else if (wParam == 0x57) 	//W
@@ -61,8 +62,12 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		else if (wParam == VK_UP) pRx += pRxSpeed;				//Rotate projection in X axis	(UP)
 		else if (wParam == VK_DOWN) pRx -= pRxSpeed;			//Rotate projection in X axis	(DOWN)
 		else if (wParam == VK_CONTROL) isOrtho = !isOrtho;		//Switch Ortho/Perspective 
-		else if (wParam == 0x45) tz += tSpeed;					//Near
-		else if (wParam == 0x51) tz -= tSpeed;					//Far
+		else if (wParam == 0x45) tz += tSpeed;					//Near					(E)
+		else if (wParam == 0x51) tz -= tSpeed;					//Far					(Q)
+		else if (wParam == 0x31) ty += tSpeed;					//move projection up	(1)
+		else if (wParam == 0x32) ty -= tSpeed;					//move projection down	(2)
+
+
 		/* ------------------- */
 
 		/* ROTATION CONTROL */
@@ -135,7 +140,7 @@ void lighting() {
 }
 
 void projection() {
-	double frustum = 1;
+	double frustum = 2;
 	glMatrixMode(GL_PROJECTION);	//refer to projection matrix
 	glLoadIdentity();				//reset the projection matrix
 	glTranslatef(pTx, pTy, 0);		//translate projection
@@ -168,18 +173,26 @@ void display() {
 
 	lighting();
 	glPushMatrix();
-		glTranslatef(0, 0, tz);
+		glTranslatef(0, ty, tz);
 		glRotatef(rotateY, 0, 1, 0);
 		glRotatef(rotateX, 1, 0, 0);
-		glTranslatef(0, -0.3, 0);
-		bridge.londonBridge();
+		
+		switch (bridgeOn) {		
+			case true:
+				bridge.londonBridge();
+				break;
+			case false:
+				break;
+		}
+
+		/*glPushMatrix();
+			glRotatef(0.2, 1.0, 0, 0);
+			leg.gundamFeet();
+			leg.gundamCalf();
+		glPopMatrix();*/
 	glPopMatrix();
 
-	/*glPushMatrix();
-	glRotatef(0.2, 1.0, 0, 0);
-		leg.gundamFeet();
-		leg.gundamCalf();
-	glPopMatrix();*/
+	
 	
 }
 //--------------------------------------------------------------------

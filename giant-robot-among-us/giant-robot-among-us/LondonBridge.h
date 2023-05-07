@@ -13,6 +13,7 @@ class LondonBridge: public Draw{
 		void tower();
 		void roof();
 		void pillar();
+		void wires();
 		void londonBridge();
 };
 

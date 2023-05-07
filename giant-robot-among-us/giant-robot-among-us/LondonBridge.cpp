@@ -44,8 +44,18 @@ void LondonBridge::pillar() {
 	glPopMatrix();
 }
 
-void LondonBridge::londonBridge() {
+void LondonBridge::wires() {
+	glPushMatrix();
+		glColor3f(0.1, 0.1, 0.1);
+		glRotatef(-90, 1, 0, 0);
+		glTranslatef(0.3, 0, 0.2);
+		glRotatef(-40, 0, 1, 0);
+		fullCylinder(0.025, 0.025, 0.9);
+	glPopMatrix();
+}
 
+void LondonBridge::londonBridge() {
+	
 	/*First tower*/
 	glPushMatrix();
 		tower();
@@ -63,12 +73,53 @@ void LondonBridge::londonBridge() {
 	glPopMatrix();
 	/*------------*/
 
-	glPushMatrix();					//Road
+	/*Wires*/
+	glPushMatrix();
+		wires();
+		glPushMatrix();
+			glTranslatef(0, 0, 0.5);
+			wires();
+		glPopMatrix();
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(2, 0, 0);
+		wires();
+		glPushMatrix();
+			glTranslatef(0, 0, 0.5);
+			wires();
+		glPopMatrix();
+	glPopMatrix();
+
+	glPushMatrix();
+		glRotatef(-180, 1, 0, 0);
+		glTranslatef(0.9, -1.1, -0.5);
+		wires();
+		glPushMatrix();
+			glTranslatef(0, 0, 0.5);
+			wires();
+		glPopMatrix();
+	glPopMatrix();
+
+	glPushMatrix();
+		glTranslatef(-2, 0, 0);
+		glRotatef(-180, 1, 0, 0);
+		glTranslatef(0.9, -1.1, -0.5);
+		wires();
+		glPushMatrix();
+			glTranslatef(0, 0, 0.5);
+			wires();
+		glPopMatrix();
+	glPopMatrix();
+	/*------*/
+
+	/*Road*/
+	glPushMatrix();					
 		glColor3f(0.2, 0.2, 0.2);
 		glScalef(10.0, 0.05, 0.5);
-		glTranslatef(-0.5, 2.0, 0);
+		glTranslatef(-0.5, 3.0, 0);
 		cube(1.0);
 	glPopMatrix();
-	
+	/*-----*/
 }
 
