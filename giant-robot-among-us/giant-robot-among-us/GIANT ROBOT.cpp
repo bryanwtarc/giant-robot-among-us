@@ -225,6 +225,7 @@ void display() {
 					glPopMatrix();
 					glPushMatrix();
 					leg.gundamThigh();
+					leg.legAddons();
 					glPopMatrix();
 				glPopMatrix();
 				// right leg
@@ -238,6 +239,7 @@ void display() {
 					glPopMatrix();
 					glPushMatrix();
 					leg.gundamThigh();
+					leg.legAddons();
 					glPopMatrix();
 				glPopMatrix();
 			glPopMatrix();

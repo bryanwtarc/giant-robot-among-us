@@ -240,6 +240,7 @@ void Legs::legAddons() {
 		glTranslatef(0, 0, 0.4);
 		fulldisk(0, 0.1);
 	glPopMatrix();
+	glPushMatrix();
 		//Bottom of feet
 		glScalef(2.2, 0.25, 1.0);
 		glTranslatef(-0.025, 0, 0.745);
@@ -247,7 +248,7 @@ void Legs::legAddons() {
 		lineCube(0.25);
 		glColor3f(0.82, 0.39, 0.09);
 		cube(0.25);
-	glPushMatrix();
+	glPopMatrix();
 	
 	glEnd();
 }
