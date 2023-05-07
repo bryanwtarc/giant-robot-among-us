@@ -257,5 +257,4 @@ void Legs::mergeLegs() {
 	gundamLowerLeg();
 	gundamThigh();
 	legAddons();
-	cock();
 }
