@@ -129,8 +129,17 @@ void Draw::fullCylinder(float br, float tr, float h) {
 	gluQuadricDrawStyle(cylinder, GLU_FILL);		// SET THE DRAW STYLE 
 
 	gluCylinder(cylinder, br, tr, h, 30, 30);		// gluCylinder (base radius, top radius, height, slice, stack)
-
+	
 	gluDeleteQuadric(cylinder);			// delete the quadric obj
+}
+
+void Draw::fulldisk(float br, float tr) {
+	GLUquadricObj* quad = NULL; // create a quadric obj pointer
+	quad = gluNewQuadric();		// create a quadric obj
+	gluQuadricDrawStyle(quad, GLU_FILL);		// SET THE DRAW STYLE 
+
+	gluDisk(quad, br, tr, 30, 30);
+	gluDeleteQuadric(quad);			// delete the quadric obj
 }
 
 void Draw::lineCone(float tr, float h) {

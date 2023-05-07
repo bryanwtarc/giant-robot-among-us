@@ -13,6 +13,7 @@ class Legs: public Draw
 		void gundamLowerLeg();
 		void gundamThigh();
 		void mergeLegs();
+		void legAddons();
 };
 
 #endif

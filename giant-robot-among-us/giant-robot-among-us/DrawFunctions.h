@@ -31,6 +31,8 @@ class Draw {
 		void linePyramid(float size);
 
 		void fullPyramid(float size);
+
+		void fulldisk(float br, float tr);
 };
 
 #endif
