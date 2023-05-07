@@ -13,6 +13,8 @@ class UpperBody : public Draw {
 		void hand();
 		void hip();
 		void torso();
+		void cock();
+
 };
 
 #endif

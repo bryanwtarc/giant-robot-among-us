@@ -174,7 +174,7 @@ void Legs::gundamLowerLeg() {
 	//Knee bone
 	glPushMatrix();
 		glScalef(1.2, 0.5, 1.0);
-		glTranslatef(-0.025, 1.8, 0.745);
+		glTranslatef(-0.025, 2, 0.745);
 		glColor3f(0, 0, 0);
 		lineCube(0.25);
 		glColor3f(0.8, 0.8, 1.0);
@@ -186,7 +186,7 @@ void Legs::gundamLowerLeg() {
 		glTranslatef(0, 0.35, 0.77);
 		glColor3f(0, 0, 0);
 		lineCube(0.21);
-		glColor3f(1.0, 0.2, 0.2);
+		glColor3f(0.55, 0.56, 0.55);
 		cube(0.21);
 	glPopMatrix();
 	//Knee Joint
@@ -195,6 +195,9 @@ void Legs::gundamLowerLeg() {
 		glTranslatef(0.15, 1.3, 0.685);
 		glColor3f(1.0, 1.0, 1.0);
 		fullCylinder(0.1, 0.1, 0.4);
+		fulldisk(0, 0.1);
+		glTranslatef(0, 0, 0.4);
+		fulldisk(0, 0.1);
 	glPopMatrix();
 }
 
@@ -217,8 +220,41 @@ void Legs::gundamThigh() {
 	glPopMatrix();
 }
 
+void Legs::legAddons() {
+	//AnkleGuard
+	glPushMatrix();
+		glScalef(1.2, 1, 1.0);
+		glTranslatef(-0.025, 0.4, 0.745);
+		glColor3f(0, 0, 0);
+		lineCube(0.25);
+		glColor3f(0.8, 0.8, 1.0);
+		cube(0.25);
+	glPopMatrix();
+	//Ankle Joint
+	glPushMatrix();
+		glScalef(1.0, 1.0, 1.0);
+		glTranslatef(0.15, 0.5, 0.685);
+		glColor3f(1.0, 1.0, 1.0);
+		fullCylinder(0.1, 0.1, 0.4);
+		fulldisk(0, 0.1);
+		glTranslatef(0, 0, 0.4);
+		fulldisk(0, 0.1);
+	glPopMatrix();
+		//Bottom of feet
+		glScalef(2.2, 0.25, 1.0);
+		glTranslatef(-0.025, 0, 0.745);
+		glColor3f(0, 0, 0);
+		lineCube(0.25);
+		glColor3f(0.82, 0.39, 0.09);
+		cube(0.25);
+	glPushMatrix();
+	
+	glEnd();
+}
+
 void Legs::mergeLegs() {
 	gundamLegs();
 	gundamLowerLeg();
 	gundamThigh();
+	legAddons();
 }

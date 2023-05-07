@@ -203,9 +203,9 @@ void display() {
 		/* ----------- */
 
 		/* HEAD */
-		/*glPushMatrix();
+		glPushMatrix();
 			head.gundamHead();
-		glPopMatrix();*/
+		glPopMatrix();
 		/* ------------*/
 
 		
