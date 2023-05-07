@@ -203,12 +203,11 @@ void display() {
 
 	lighting();
 	glPushMatrix();
-		
+		//Adjusts the whole robot into frame
+		glTranslatef(2, -3, -10);
 
 		/* Whole scene's transformations */
 		glTranslatef(tx, ty, tz);
-		//Adjusts the whole robot into frame
-		glTranslatef(2, -3, -10);
 		glRotatef(rotateY, 0, 1, 0);
 		glRotatef(rotateX, 1, 0, 0);
 
