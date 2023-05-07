@@ -107,7 +107,7 @@ void Draw::fullSphere(float r) {
 void Draw::lineSphere(float r) {
 	GLUquadricObj* sphere = NULL;
 	sphere = gluNewQuadric();
-	gluQuadricDrawStyle(sphere, GLU_FILL);
+	gluQuadricDrawStyle(sphere, GLU_LINE);
 	gluQuadricTexture(sphere, true);			//For Texturing
 	gluSphere(sphere, r, 30, 30);
 	gluDeleteQuadric(sphere);
