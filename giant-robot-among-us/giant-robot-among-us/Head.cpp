@@ -16,7 +16,13 @@ void Head::gundamHead() {
 				fullSphere(0.4);
 			glPopMatrix();*/
 			glPushMatrix();
-				glColor3f(0.65, 0.65, 0.65);
+				glColor3f(0.9, 0.9, 0.9);
+				glScalef(1, 0.55, 1);
+				glTranslatef(-0.25, 0.55, -0.25);
+				fullPyramid(0.5);
+			glPopMatrix();
+			glPushMatrix();
+				//glColor3f(0.65, 0.65, 0.65);
 				glScalef(1.25, 1.25, 1.25);
 				glTranslatef(-0.25, -0.25, -0.25);
 				cube(0.5);
@@ -132,6 +138,18 @@ void Head::gundamHead() {
 		glPopMatrix();
 		/* ------*/
 
+		/* Antennas */
+		glPushMatrix();
+			glRotatef(90, 0, 0, 1);
+			glTranslatef(0.31, -0.62, 0.32);
+			glPushMatrix();
+				glColor3f(1, 1, 0);
+				glRotatef(90, 0, 0, 1);
+				glScalef(6.0, 0.6, 0.15);
+				fullPyramid(0.2);
+			glPopMatrix();
+		glPopMatrix();
+		/* ---------- */
 
 	glPopMatrix();
 }

@@ -214,26 +214,26 @@ void display() {
 		glPopMatrix();*/
 		/* ---------- */
 
-		/* LEGS */
-		glPushMatrix();
-			glScalef(3, 3, 3);
-			glPushMatrix();
-				glTranslatef(0, -0.8, 0);
-				leg.mergeLegs();
-			glPopMatrix();
-			glPushMatrix();
-				glTranslatef(0, -0.8, -0.5);
-				leg.mergeLegs();
-			glPopMatrix();
-			glPushMatrix();
-			glTranslatef(0, -0.25, 0);
-				upper.hip();
-			glPopMatrix();
-			glPushMatrix();
-				upper.torso();
-			glPopMatrix();
-		glPopMatrix();
-		/* ------------ */
+		///* LEGS */
+		//glPushMatrix();
+		//	glScalef(3, 3, 3);
+		//	glPushMatrix();
+		//		glTranslatef(0, -0.8, 0);
+		//		leg.mergeLegs();
+		//	glPopMatrix();
+		//	glPushMatrix();
+		//		glTranslatef(0, -0.8, -0.5);
+		//		leg.mergeLegs();
+		//	glPopMatrix();
+		//	glPushMatrix();
+		//	glTranslatef(0, -0.25, 0);
+		//		upper.hip();
+		//	glPopMatrix();
+		//	glPushMatrix();
+		//		upper.torso();
+		//	glPopMatrix();
+		//glPopMatrix();
+		///* ------------ */
 
 		
 	glPopMatrix();

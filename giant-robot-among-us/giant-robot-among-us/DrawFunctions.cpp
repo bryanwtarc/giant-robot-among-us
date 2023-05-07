@@ -204,7 +204,6 @@ void Draw::linePyramid(float size) {
 void Draw::fullPyramid(float size) {
 
 	glBegin(GL_POLYGON);
-	glLineWidth(1.5);
 
 	//Base
 	glVertex3f(0.0, 0.0, size);
