@@ -11,9 +11,8 @@ class weapon : public Draw {
 public:
 
 
-    void lightsaber();
-
-    void gun();
+    void lightsaberL();
+    void lightsaberR();
 };
 
 #endif
