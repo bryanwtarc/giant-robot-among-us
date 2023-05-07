@@ -7,6 +7,7 @@
 #include "Head.h"
 #include "legs.h"
 #include "UpperBody.h"
+#include "Arms.h"
 
 #define WINDOW_TITLE "OpenGL Window"
 
@@ -171,6 +172,7 @@ void display() {
 	Head head;
 	Legs leg;
 	UpperBody upper;
+	Arms arm;
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
@@ -197,9 +199,9 @@ void display() {
 		/* ----------- */
 
 		/* HEAD */
-		glPushMatrix();
+		/*glPushMatrix();
 			head.gundamHead();
-		glPopMatrix();
+		glPopMatrix();*/
 		/* ------------*/
 
 		///* UPPERBODY */
@@ -214,26 +216,38 @@ void display() {
 		glPopMatrix();*/
 		/* ---------- */
 
-		///* LEGS */
-		//glPushMatrix();
-		//	glScalef(3, 3, 3);
-		//	glPushMatrix();
-		//		glTranslatef(0, -0.8, 0);
-		//		leg.mergeLegs();
-		//	glPopMatrix();
-		//	glPushMatrix();
-		//		glTranslatef(0, -0.8, -0.5);
-		//		leg.mergeLegs();
-		//	glPopMatrix();
-		//	glPushMatrix();
-		//	glTranslatef(0, -0.25, 0);
-		//		upper.hip();
-		//	glPopMatrix();
-		//	glPushMatrix();
-		//		upper.torso();
-		//	glPopMatrix();
-		//glPopMatrix();
-		///* ------------ */
+		
+		glPushMatrix();
+			glScalef(3, 3, 3);
+			/* LEGS */
+			glPushMatrix();
+				glTranslatef(0, -0.8, 0);
+				leg.mergeLegs();
+			glPopMatrix();
+			glPushMatrix();
+				glTranslatef(0, -0.8, -0.5);
+				leg.mergeLegs();
+			glPopMatrix();
+			/*  TORSO  */
+			glPushMatrix();
+			glTranslatef(0, -0.25, 0);
+				upper.hip();
+			glPopMatrix();
+			glPushMatrix();
+				upper.torso();
+			glPopMatrix();
+			/*  ARMS  */
+			glPushMatrix();
+				arm.upperArmLeft();
+			glPopMatrix();
+			glPushMatrix();
+				arm.lowerArmLeft();
+			glPopMatrix();
+		glPopMatrix();
+			
+
+		/* ------------ */
+
 
 		
 	glPopMatrix();
