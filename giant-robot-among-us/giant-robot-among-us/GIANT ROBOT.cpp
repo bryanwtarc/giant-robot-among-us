@@ -14,15 +14,23 @@
 
 bool	bridgeOn = false;					//Toggle bridge
 
+BITMAP BMP;
+HBITMAP hBMP;
+
 /* TRANSFORMATION VARIABLES */
 float	rotateX = 0, rotateY = 0, speed = 5,
 		ty = 0, tz = 0, tx = 0, tSpeed = 0.5;
+/*--------------------------*/
+
+/* ANIMATION VARIABLES */
+bool	nodHead = false,
+		shakeHead = false;
+/* ---------------------- */
 
 /* PROJECTION VARIABLES */
 bool	isOrtho = false;
 float	Onear = -10, Ofar = 10,				//Ortho view's near and far
 		Pnear = 1, Pfar = 30,				//Perspective view's near and far
-		pTx = 0, pTy = 0, pTSpeed = 0.1,	//Translation(Tx, Ty) for projection
 		pRy = 0, pRySpeed = 2,				//Rotate projection in Y axis
 		pRx = 0, pRxSpeed = 2,				//Rotate projection in X axis
 		pRz = 0, pRzSpeed = 2;				//ROtate projection in Z axis
@@ -50,6 +58,12 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		if (wParam == VK_ESCAPE) PostQuitMessage(0);
 
 		else if (wParam == VK_SUBTRACT) bridgeOn = !bridgeOn;		//Toggle bridge on/off (Default: On)		(-)
+
+		/* ANIMATION CONTROL */
+		else if (wParam == 0x54) nodHead = !nodHead;				//Toggle nodding head						(T)	
+		else if (wParam == 0x59) shakeHead = !shakeHead;			//Toggle shaking head						(Y)	
+
+		/* ----------------- */
 
 		/* LIGHTING CONTROL */
 		else if (wParam == VK_TAB) lightOn = !lightOn;				//Switch lighting on/off (Default: Off)		(TAB)
@@ -81,6 +95,8 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		else if (wParam == VK_CONTROL) isOrtho = !isOrtho;		//Switch Ortho/Perspective						(CTRL)
 		else if (wParam == VK_RETURN) {
 			pRy = 0; pRx = 0; pRz = 0;							//Reset projection								(ENTER)
+			tz = 0; ty = 0; tx = 0;								//Reset translation
+			rotateX -= rotateX; rotateY -= rotateY;				//Reset rotation
 		}
 		/* ------------------- */
 
@@ -139,6 +155,29 @@ bool initPixelFormat(HDC hdc)
 }
 //--------------------------------------------------------------------
 
+GLuint loadTexture(LPCSTR filename) {
+
+	// step 3 initialize texture info
+	GLuint texture = 0;			// texture name  // take from step 1
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
+	HBITMAP hBMP = (HBITMAP)LoadImage(GetModuleHandle(NULL), filename,
+		IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION |
+		LR_LOADFROMFILE);
+	GetObject(hBMP, sizeof(BMP), &BMP);
+
+	// step 4
+	glEnable(GL_TEXTURE_2D);
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, BMP.bmWidth,
+		BMP.bmHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, BMP.bmBits);
+
+	DeleteObject(hBMP); // take from step 5
+	return texture;
+}
+
 void lighting() {
 	switch (lightOn) {
 	case true:
@@ -170,7 +209,6 @@ void projection() {
 	double frustum = 1;
 	glMatrixMode(GL_PROJECTION);	//refer to projection matrix
 	glLoadIdentity();				//reset the projection matrix
-	glTranslatef(pTx, pTy, 0);		//translate projection
 	glRotatef(pRy, 0, 1, 0);		//Rotate in y for projection
 	glRotatef(pRx, 1, 0, 0);		//Rotate in x for projection
 	glRotatef(pRz, 0, 0, 1);		//Rotate in z for projection
@@ -195,6 +233,8 @@ void display() {
 	Arms arm;
 	weapon weapon;
 
+	GLuint texArr[3];
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0.5, 0.7, 1, 1);
@@ -215,7 +255,10 @@ void display() {
 		switch (bridgeOn) {		
 			case true:
 				glPushMatrix();
+					glTranslatef(-2, 0, 2);
+					texArr[0] = loadTexture("bricktexture.bmp");
 					bridge.londonBridge();
+					glDeleteTextures(1, &texArr[0]);
 				glPopMatrix();
 				break;
 			case false:
@@ -225,9 +268,36 @@ void display() {
 
 		/* HEAD */
 		glPushMatrix();
-			glTranslatef(-1.85, 8, 0.3);
-			glScalef(1.5, 1.5, 1.5);
-			head.gundamHead();
+		
+		switch (nodHead) {
+			case true:
+				glRotatef(speed, 1, 0, 0);
+				glPushMatrix();
+					glTranslatef(-1.85, 8, 0.3);
+					glScalef(1.5, 1.5, 1.5);
+					head.gundamHead();
+				glPopMatrix();
+				break;
+			case false:
+				switch (shakeHead) {
+				case true:
+					glRotatef(speed, 0, 1, 0);
+					glPushMatrix();
+						glTranslatef(-1.85, 8, 0.3);
+						glScalef(1.5, 1.5, 1.5);
+						head.gundamHead();
+					glPopMatrix();
+					break;
+				case false:
+					glPushMatrix();
+						glTranslatef(-1.85, 8, 0.3);
+						glScalef(1.5, 1.5, 1.5);
+						head.gundamHead();
+					glPopMatrix();
+					break;
+				}
+				break;
+		}
 		glPopMatrix();
 		/* ------------*/
 
