@@ -140,7 +140,6 @@ void UpperBody::torso() {
 	glPopMatrix();
 	//Jetpack + Sword sheathe
 	glPushMatrix();
-	glPushMatrix();
 		glScalef(0.15, 0.4, 0.8);
 		glTranslatef(-1.1, 5.3, 0.3425);
 		glColor3f(0, 0, 0);
@@ -187,5 +186,24 @@ void UpperBody::torso() {
 		lineCone(0.1, 0.3);
 		glColor3f(0.2, 0.2, 1.0);
 		fullCone(0.1, 0.3);
+	glPopMatrix();
+	//Chest Armour
+	glPushMatrix();
+		glScalef(0.3, 0.4, 0.78);
+		glTranslatef(0.8, 4.95, 0.355);
+		glRotatef(45, 0.0, 0.0, 1.0);
+		glColor3f(0, 0, 0);
+		lineCube(0.9);
+		glColor3f(1.0, 0.2, 0.2);
+		cube(0.9);
+	glPopMatrix();
+	glPushMatrix();
+		glScalef(0.2, 0.3, 0.65);
+		glTranslatef(1, 7, 0.5);
+		//glRotatef(45, 0.0, 0.0, 1.0);
+		glColor3f(0, 0, 0);
+		lineCube(0.9);
+		glColor3f(0.2, 0.2, 1.0);
+		cube(0.9);
 	glPopMatrix();
 }
