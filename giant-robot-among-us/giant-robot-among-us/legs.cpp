@@ -210,14 +210,6 @@ void Legs::gundamThigh() {
 		glColor3f(1.0, 0.2, 0.2);
 		cube(0.21);
 	glPopMatrix();
-	glPushMatrix();
-		//glScalef(1.2, 3.5, 1.2);
-		//glTranslatef(0, 0.35, 0.625);
-		//glColor3f(0, 0, 0);
-		//lineCube(0.18);
-		//glColor3f(0.2, 0.2, 1.0);
-		//cube(0.18);
-	glPopMatrix();
 }
 
 void Legs::legAddons() {
