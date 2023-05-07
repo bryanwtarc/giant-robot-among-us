@@ -311,8 +311,16 @@ void display() {
 			glPushMatrix();
 				arm.lowerWristRight();
 			glPopMatrix();
+			/*  WEAPONS  */
+			glPushMatrix();
+			weapon.lightsaberL();
+			glPopMatrix();
+			glPushMatrix();
+			weapon.lightsaberR();
+			glPopMatrix();
 		glPopMatrix();
-			
+
+
 
 		/* ------------ */
 

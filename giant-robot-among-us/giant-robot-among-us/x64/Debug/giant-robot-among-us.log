@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  GIANT ROBOT.cpp
 F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(25,34): warning C4305: 'initializing': truncation from 'double' to 'float'
 F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(36,23): warning C4305: 'initializing': truncation from 'double' to 'float'
@@ -12,3 +13,25 @@ F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(
 F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(196,9): warning C4101: 'weapon': unreferenced local variable
 F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(190,7): warning C4101: 'draw': unreferenced local variable
   giant-robot-among-us.vcxproj -> F:\temp\GP Assignment\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe
+=======
+﻿  weapon.cpp
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(10,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(12,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(15,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(16,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(17,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(20,31): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(23,20): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(24,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(25,20): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(32,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(34,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(37,32): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(38,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(39,32): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(42,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(45,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(46,27): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\weapon.cpp(47,21): warning C4305: 'argument': truncation from 'double' to 'float'
+  giant-robot-among-us.vcxproj -> C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe
+>>>>>>> e1e7b28c6d3460373e9f6e6e054c09384a6038d8
