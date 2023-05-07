@@ -128,6 +128,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Arms.cpp" />
     <ClCompile Include="DrawFunctions.cpp" />
     <ClCompile Include="GIANT ROBOT.cpp" />
     <ClCompile Include="Head.cpp" />
@@ -136,6 +137,7 @@
     <ClCompile Include="UpperBody.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Arms.h" />
     <ClInclude Include="DrawFunctions.h" />
     <ClInclude Include="Head.h" />
     <ClInclude Include="legs.h" />
