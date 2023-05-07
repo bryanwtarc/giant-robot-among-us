@@ -76,6 +76,17 @@ void UpperBody::hand() {
 
 }
 
+void UpperBody::cock() {
+	glPushMatrix();
+	glTranslatef(-0.23, 1.95, 0.825);
+	glRotatef(90, 1.0, 0.0, 0.0);
+	glColor3f(0, 0, 0);
+	lineCone(0.1, 0.3);
+	glColor3f(0.2, 0.2, 1.0);
+	fullCone(0.1, 0.3);
+	glPopMatrix();
+}
+
 void UpperBody::hip() {
 	// Main Hip
 	glPushMatrix();
@@ -207,3 +218,4 @@ void UpperBody::torso() {
 		cube(0.9);
 	glPopMatrix();
 }
+

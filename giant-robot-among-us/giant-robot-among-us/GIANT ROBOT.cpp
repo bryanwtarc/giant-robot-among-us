@@ -198,7 +198,8 @@ void display() {
 
 		/* HEAD */
 		glPushMatrix();
-			head.gundamHead();
+		
+			upper.torso();
 		glPopMatrix();
 		/* ------------*/
 
