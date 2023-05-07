@@ -29,6 +29,7 @@ float	Onear = -10, Ofar = 10,				//Ortho view's near and far
 
 /* LIGHTING VARIABLES */
 bool	lightOn = false;
+int		lightMode = 1;
 float	amb[] = { 1, 0, 0 },		//Red color ambient light
 		dif[] = { 1, 0, 0 },		//Red color diffuse light
 		posA[] = { 0, 0.8, 0 },		//Position for ambient lighting
@@ -135,6 +136,7 @@ void lighting() {
 	case false:
 		glDisable(GL_LIGHTING);				//Disable lighting for whole scene
 	}
+
 
 	////Light 0
 	//glLightfv(GL_LIGHT0, GL_AMBIENT, amb);		//Ambient Light with rgb {1, 0, 0} (RED)
