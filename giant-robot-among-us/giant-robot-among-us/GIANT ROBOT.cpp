@@ -272,6 +272,9 @@ void display() {
 			glPushMatrix();
 				upper.torso();
 			glPopMatrix();
+			glPushMatrix();
+				upper.cock();
+			glPopMatrix();
 			/*  ARMS  */
 			glPushMatrix();
 				arm.upperArmLeft();
