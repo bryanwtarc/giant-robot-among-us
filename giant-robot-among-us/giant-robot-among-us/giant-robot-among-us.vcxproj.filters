@@ -24,7 +24,7 @@
     <ClCompile Include="LondonBridge.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Gundam.cpp">
+    <ClCompile Include="Head.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="legs.cpp">
@@ -38,7 +38,7 @@
     <ClInclude Include="LondonBridge.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Gundam.h">
+    <ClInclude Include="Head.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="legs.h">
