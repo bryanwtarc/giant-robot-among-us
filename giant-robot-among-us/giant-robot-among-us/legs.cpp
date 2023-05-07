@@ -157,20 +157,27 @@ void Legs::gundamFeet() {
 	glColor3f(1.0, 0, 0);
 	glTranslatef(0.2, 0, 0.0);
 	glRotatef(90, 1, 0, 0);
-	draw.fullCylinder(0.1, 0.1, 0.6);
+	fullCylinder(0.1, 0.1, 0.6);
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(0.2, 0.05, 0);
 	glColor3f(0, 1, 0);
-	draw.fullCylinder(0.1, 0.1, 0.07);
+	fullCylinder(0.1, 0.1, 0.07);
 	glColor3f(0, 0, 1);
-	draw.fullSphere(0.1);
+	fullSphere(0.1);
 	glPopMatrix();
 	glPopMatrix();
 }
 
-void Legs::gundamCalf() {
-	Draw draw;
+void Legs::gundamRThigh() {
+
+}
+
+void Legs::gundamLThigh() {
+
+}
+
+void Legs::gundamCrotchPlate() {
 
 }
