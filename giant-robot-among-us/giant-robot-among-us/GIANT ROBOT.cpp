@@ -204,14 +204,10 @@ void display() {
 
 		/* LEGS */
 		glPushMatrix();
-		glScalef(10, 10, 10);
+		glScalef(5, 5, 5);
 		glPushMatrix();
-			glTranslatef(0, 0, -0.3);
-			leg.gundamFeet();
+			leg.mergeLegs();
 		glPopMatrix();
-			leg.gundamLThigh();
-			leg.gundamRThigh();
-		glPushMatrix();
 		glPopMatrix();
 			
 			
