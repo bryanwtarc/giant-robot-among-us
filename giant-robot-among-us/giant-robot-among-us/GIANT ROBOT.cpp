@@ -4,7 +4,7 @@
 #include <math.h>
 #include "DrawFunctions.h"
 #include "LondonBridge.h"
-#include "Gundam.h"
+#include "Head.h"
 #include "legs.h"
 
 #define WINDOW_TITLE "OpenGL Window"
@@ -161,7 +161,7 @@ void projection() {
 void display() {
 	Draw draw;
 	LondonBridge bridge;
-	Gundam gundam;
+	Head head;
 	Legs leg;
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -176,16 +176,31 @@ void display() {
 		glRotatef(rotateY, 0, 1, 0);
 		glRotatef(rotateX, 1, 0, 0);
 		
+		/* BRIDGE */
 		switch (bridgeOn) {		
 			case true:
-				bridge.londonBridge();
+				glPushMatrix();
+					bridge.londonBridge();
+				glPopMatrix();
 				break;
 			case false:
 				break;
 		}
+		/* ----------- */
 
-	glPushMatrix();
-		leg.gundamFeet();
+		/* HEAD */
+		glPushMatrix();
+			head.gundamHead();
+		glPopMatrix();
+		/* ------------*/
+
+		/* LEGS */
+		glPushMatrix();
+			leg.gundamFeet();
+		glPopMatrix();
+		/* ------------ */
+
+		
 	glPopMatrix();
 
 	//A M O N G     U S
