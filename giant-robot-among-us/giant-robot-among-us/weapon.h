@@ -13,6 +13,7 @@ public:
 
     void lightsaber();
 
+    void gun();
 };
 
 #endif

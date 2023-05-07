@@ -14,6 +14,10 @@ class Draw {
 
 		void lineCube(float size);
 
+		void triangularPrism(float x, float y, float z);
+
+		void lineTriPrism(float x, float y, float z);
+
 		void fullSphere(float r);
 
 		void lineSphere(float r);

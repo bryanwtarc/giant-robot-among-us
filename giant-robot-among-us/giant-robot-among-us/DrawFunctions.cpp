@@ -95,6 +95,65 @@ void Draw::lineCube(float size) {
 	glEnd();
 }
 
+void Draw::triangularPrism(float x, float y, float z)
+{
+	glScalef(x, y, z);
+	glBegin(GL_QUADS);
+	glVertex3f(0.5, 0, 0.5);
+	glVertex3f(0.5, 0, -0.5);
+	glVertex3f(-0.5, 0, -0.5);
+	glVertex3f(-0.5, 0, 0.5);
+
+	glVertex3f(0.5, 0, -0.5);
+	glVertex3f(0.5, 1, -0.5);
+	glVertex3f(-0.5, 1, -0.5);
+	glVertex3f(-0.5, 0, -0.5);
+
+	glVertex3f(0.5, 1, -0.5);
+	glVertex3f(-0.5, 1, -0.5);
+	glVertex3f(-0.5, 0, 0.5);
+	glVertex3f(0.5, 0, 0.5);
+	glEnd();
+	glBegin(GL_TRIANGLES);
+	glVertex3f(0.5, 0, 0.5);
+	glVertex3f(0.5, 1, -0.5);
+	glVertex3f(0.5, 0, -0.5);
+
+	glVertex3f(-0.5, 0, 0.5);
+	glVertex3f(-0.5, 1, -0.5);
+	glVertex3f(-0.5, 0, -0.5);
+	glEnd();
+}
+
+void Draw::lineTriPrism(float x, float y, float z) {
+	glScalef(x, y, z);
+	glBegin(GL_LINE_STRIP);
+	glVertex3f(0.5, 0, 0.5);
+	glVertex3f(0.5, 0, -0.5);
+	glVertex3f(-0.5, 0, -0.5);
+	glVertex3f(-0.5, 0, 0.5);
+
+	glVertex3f(0.5, 0, -0.5);
+	glVertex3f(0.5, 1, -0.5);
+	glVertex3f(-0.5, 1, -0.5);
+	glVertex3f(-0.5, 0, -0.5);
+
+	glVertex3f(0.5, 1, -0.5);
+	glVertex3f(-0.5, 1, -0.5);
+	glVertex3f(-0.5, 0, 0.5);
+	glVertex3f(0.5, 0, 0.5);
+	glEnd();
+	glBegin(GL_LINE_STRIP);
+	glVertex3f(0.5, 0, 0.5);
+	glVertex3f(0.5, 1, -0.5);
+	glVertex3f(0.5, 0, -0.5);
+
+	glVertex3f(-0.5, 0, 0.5);
+	glVertex3f(-0.5, 1, -0.5);
+	glVertex3f(-0.5, 0, -0.5);
+	glEnd();
+}
+
 void Draw::fullSphere(float r) {
 		GLUquadricObj* sphere = NULL;
 		sphere = gluNewQuadric();
