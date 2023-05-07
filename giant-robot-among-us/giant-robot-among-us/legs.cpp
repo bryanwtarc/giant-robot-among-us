@@ -171,6 +171,52 @@ void Legs::gundamFeet() {
 }
 
 void Legs::gundamRThigh() {
+	glPushMatrix();
+	glBegin(GL_QUADS);
+	//face 1
+	glVertex3f(0.05, -0.19, 0.24); //E
+	glVertex3f(0, -0.19, 0.24);  //G
+	glVertex3f(0, -0.16, 0.24); //H
+	glVertex3f(0.05, -0.16, 0.24); //F
+	//face 2
+	glVertex3f(0.05, -0.16, 0.24); //F
+	glVertex3f(0.075, -0.125, 0.3); //P
+	glVertex3f(0.075, -0.19, 0.3); //O
+	glVertex3f(0.05, -0.19, 0.24); //E
+	//face 3
+	glVertex3f(0.05, -0.19, 0.24); //E
+	glVertex3f(0, -0.19, 0.24); //G
+	glVertex3f(0, -0.19, 0.35); //J
+	glVertex3f(0.075, -0.19, 0.35); //L
+	glVertex3f(0.075, -0.19, 0.3); //O
+	//face 4
+	glVertex3f(0.075, -0.19, 0.3); //O
+	glVertex3f(0.075, -0.125, 0.3); //P
+	glVertex3f(0.075, -0.125, 0.35); //K
+	glVertex3f(0.075, -0.19, 0.35);//L
+	//face 5
+	glVertex3f(0.075, -0.19, 0.35);//L
+	glVertex3f(0, -0.19, 0.35);//J
+	glVertex3f(0, -0.125, 0.35);//I
+	glVertex3f(0.075, -0.125, 0.35);//K
+	//face 6
+	glVertex3f(0.075, -0.125, 0.35);//K
+	glVertex3f(0.075, -0.125, 0.3);//P
+	glVertex3f(0, -0.16, 0.24);//N
+	glVertex3f(0, -0.125, 0.35);//I
+	//face 7
+	glVertex3f(0, -0.125, 0.35);//I
+	glVertex3f(0, -0.19, 0.35);//J
+	glVertex3f(0, -0.19, 0.24);//G
+	glVertex3f(0, -0.16, 0.24);//H
+	glVertex3f(0, -0.16, 0.24);//N
+	//face 8
+	glVertex3f(0, -0.16, 0.24);//N
+	glVertex3f(0.075, -0.125, 0.3);//P
+	glVertex3f(0.05, -0.16, 0.24);//F
+	glVertex3f(0, -0.16, 0.24);//H
+	glEnd();
+	glPopMatrix();
 
 }
 
