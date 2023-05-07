@@ -3,9 +3,11 @@
 #include <gl/GLU.h>
 #include <math.h>
 #include "DrawFunctions.h"
-#include "Head.h"
+#include "UpperBody.h"
 
-void Head::gundamHead() {
-	glColor3f(1, 1, 1);
-	fullSphere(0.2);
+void UpperBody::hand() {
+	glPushMatrix();
+	glScalef()
+	cube(0.5);
+	glPopMatrix();
 }

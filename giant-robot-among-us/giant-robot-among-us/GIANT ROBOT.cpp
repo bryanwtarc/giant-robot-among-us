@@ -6,6 +6,7 @@
 #include "LondonBridge.h"
 #include "Head.h"
 #include "legs.h"
+#include "UpperBody.h"
 
 #define WINDOW_TITLE "OpenGL Window"
 
@@ -59,8 +60,8 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		/* PERSPECTIVE CONTROL */
 		else if (wParam == VK_LEFT) pRy += pRySpeed;			//Rotate projection in Y axis	(LEFT)
 		else if (wParam == VK_RIGHT) pRy -= pRySpeed;			//Rotate projection in Y axis	(RIGHT)
-		else if (wParam == VK_UP) pRx += pRxSpeed;				//Rotate projection in X axis	(UP)
-		else if (wParam == VK_DOWN) pRx -= pRxSpeed;			//Rotate projection in X axis	(DOWN)
+		else if (wParam == VK_UP) pRx -= pRxSpeed;				//Rotate projection in X axis	(UP)
+		else if (wParam == VK_DOWN) pRx += pRxSpeed;			//Rotate projection in X axis	(DOWN)
 		else if (wParam == VK_CONTROL) isOrtho = !isOrtho;		//Switch Ortho/Perspective 
 		else if (wParam == 0x45) tz += tSpeed;					//Near					(E)
 		else if (wParam == 0x51) tz -= tSpeed;					//Far					(Q)
@@ -71,10 +72,10 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		/* ------------------- */
 
 		/* ROTATION CONTROL */
-		else if (wParam == VK_NUMPAD4) rotateY += speed;
-		else if (wParam == VK_NUMPAD6) rotateY -= speed;
-		else if (wParam == VK_NUMPAD8) rotateX += speed;
-		else if (wParam == VK_NUMPAD2) rotateX -= speed;
+		else if (wParam == VK_NUMPAD4) rotateY -= speed;
+		else if (wParam == VK_NUMPAD6) rotateY += speed;
+		else if (wParam == VK_NUMPAD8) rotateX -= speed;
+		else if (wParam == VK_NUMPAD2) rotateX += speed;
 		/* ---------------- */
 		break;
 
@@ -202,10 +203,6 @@ void display() {
 
 		
 	glPopMatrix();
-
-	//A M O N G     U S
-	//T E S T
-	//T E S T 2
 }
 //--------------------------------------------------------------------
 
