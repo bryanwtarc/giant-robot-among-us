@@ -9,6 +9,7 @@
 
 class UpperBody : public Draw {
 	public:
+		void finger();
 		void hand();
 };
 
