@@ -14,6 +14,9 @@
 
 bool	bridgeOn = false;					//Toggle bridge
 
+BITMAP BMP;
+HBITMAP hBMP;
+
 /* TRANSFORMATION VARIABLES */
 float	rotateX = 0, rotateY = 0, speed = 5,
 		ty = 0, tz = 0, tx = 0, tSpeed = 0.5;
@@ -152,6 +155,29 @@ bool initPixelFormat(HDC hdc)
 }
 //--------------------------------------------------------------------
 
+GLuint loadTexture(LPCSTR filename) {
+
+	// step 3 initialize texture info
+	GLuint texture = 0;			// texture name  // take from step 1
+	glPixelStorei(GL_UNPACK_ALIGNMENT, 4);
+	HBITMAP hBMP = (HBITMAP)LoadImage(GetModuleHandle(NULL), filename,
+		IMAGE_BITMAP, 0, 0, LR_CREATEDIBSECTION |
+		LR_LOADFROMFILE);
+	GetObject(hBMP, sizeof(BMP), &BMP);
+
+	// step 4
+	glEnable(GL_TEXTURE_2D);
+	glGenTextures(1, &texture);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, BMP.bmWidth,
+		BMP.bmHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, BMP.bmBits);
+
+	DeleteObject(hBMP); // take from step 5
+	return texture;
+}
+
 void lighting() {
 	switch (lightOn) {
 	case true:
@@ -207,6 +233,8 @@ void display() {
 	Arms arm;
 	weapon weapon;
 
+	GLuint texArr[3];
+
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0.5, 0.7, 1, 1);
@@ -227,8 +255,10 @@ void display() {
 		switch (bridgeOn) {		
 			case true:
 				glPushMatrix();
-				glTranslatef(-2, 0, 2);
+					glTranslatef(-2, 0, 2);
+					texArr[0] = loadTexture("bricktexture.bmp");
 					bridge.londonBridge();
+					glDeleteTextures(1, &texArr[0]);
 				glPopMatrix();
 				break;
 			case false:
