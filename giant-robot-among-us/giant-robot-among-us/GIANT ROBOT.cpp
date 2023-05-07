@@ -29,6 +29,7 @@ float	Onear = -10, Ofar = 10,				//Ortho view's near and far
 
 /* LIGHTING VARIABLES */
 bool	lightOn = false;
+int		lightMode = 1;
 float	amb[] = { 1, 0, 0 },		//Red color ambient light
 		dif[] = { 1, 0, 0 },		//Red color diffuse light
 		posA[] = { 0, 0.8, 0 },		//Position for ambient lighting
@@ -136,6 +137,7 @@ void lighting() {
 		glDisable(GL_LIGHTING);				//Disable lighting for whole scene
 	}
 
+
 	////Light 0
 	//glLightfv(GL_LIGHT0, GL_AMBIENT, amb);		//Ambient Light with rgb {1, 0, 0} (RED)
 	//glLightfv(GL_LIGHT0, GL_POSITION, posA);	//Sets position {0, 0.8, 0} (ABOVE)
@@ -204,6 +206,8 @@ void display() {
 
 		/* HEAD */
 		glPushMatrix();
+			glTranslatef(-1.85, 8, 0.3);
+			glScalef(1.5, 1.5, 1.5);
 			head.gundamHead();
 		glPopMatrix();
 		/* ------------*/
@@ -211,6 +215,7 @@ void display() {
 		
 		glPushMatrix();
 			glScalef(3, 3, 3);
+			glRotatef(-90, 0, 1.0, 0);
 			/* LEGS */
 			glPushMatrix();
 				//left feet

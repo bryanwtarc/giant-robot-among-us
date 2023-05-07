@@ -1,4 +1,4 @@
-﻿  UpperBody.cpp
+  UpperBody.cpp
 C:\Users\Ryan\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\UpperBody.cpp(13,22): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\Ryan\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\UpperBody.cpp(14,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
 C:\Users\Ryan\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\UpperBody.cpp(15,12): warning C4305: 'argument': truncation from 'double' to 'float'
