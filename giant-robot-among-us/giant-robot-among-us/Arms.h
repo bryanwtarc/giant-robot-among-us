@@ -22,6 +22,9 @@ public:
 
 	void lowerWristRight();
 
+	void leftArmAddons();
+
+	void rightArmAddons();
 };
 
 #endif
