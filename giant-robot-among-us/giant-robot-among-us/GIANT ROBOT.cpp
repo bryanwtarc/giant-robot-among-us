@@ -161,8 +161,6 @@ void display() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0.5, 0.7, 1, 1);
-
-	
 	projection();
 	glMatrixMode(GL_MODELVIEW);
 
@@ -175,10 +173,10 @@ void display() {
 		bridge.londonBridge();
 	glPopMatrix();
 
-	//glPushMatrix();
-	//glRotatef(0.2, 1.0, 0, 0);
-	//	leg.gundamLegs();
-	//glPopMatrix();
+	glPushMatrix();
+		leg.gundamFeet();
+	glPopMatrix();
+
 	//A M O N G     U S
 	//T E S T
 	//T E S T 2
