@@ -213,13 +213,35 @@ void display() {
 			glScalef(3, 3, 3);
 			/* LEGS */
 			glPushMatrix();
-				glTranslatef(0, -0.8, 0);
-				leg.mergeLegs();
+				//left feet
+				glPushMatrix();
+					glTranslatef(0, -0.8, 0);
+					glPushMatrix();
+					leg.gundamLegs();
+					glPopMatrix();
+					//knee and calf
+					glPushMatrix();
+					leg.gundamLowerLeg();
+					glPopMatrix();
+					glPushMatrix();
+					leg.gundamThigh();
+					glPopMatrix();
+				glPopMatrix();
+				// right leg
+				glPushMatrix();
+					glTranslatef(0, -0.8, -0.5);
+					glPushMatrix();
+					leg.gundamLegs();
+					glPopMatrix();
+					glPushMatrix();
+					leg.gundamLowerLeg();
+					glPopMatrix();
+					glPushMatrix();
+					leg.gundamThigh();
+					glPopMatrix();
+				glPopMatrix();
 			glPopMatrix();
-			glPushMatrix();
-				glTranslatef(0, -0.8, -0.5);
-				leg.mergeLegs();
-			glPopMatrix();
+
 			/*  TORSO  */
 			glPushMatrix();
 			glTranslatef(0, -0.25, 0);
