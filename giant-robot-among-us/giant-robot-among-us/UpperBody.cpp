@@ -166,7 +166,6 @@ void UpperBody::torso() {
 		lineCube(0.8);
 		glColor3f(1.0, 0.2, 0.2);
 		cube(0.8);
-	//CUBE ORNAMENTS ON THE THING (ryan)
 	glPopMatrix();
 	//Jetpack + Sword sheathe
 	glPushMatrix();

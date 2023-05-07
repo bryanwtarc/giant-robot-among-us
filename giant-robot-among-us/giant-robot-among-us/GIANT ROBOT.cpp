@@ -8,6 +8,7 @@
 #include "legs.h"
 #include "UpperBody.h"
 #include "Arms.h"
+#include "weapon.h"
 
 #define WINDOW_TITLE "OpenGL Window"
 
@@ -177,6 +178,7 @@ void display() {
 	Legs leg;
 	UpperBody upper;
 	Arms arm;
+	weapon weapon;
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
