@@ -208,18 +208,6 @@ void display() {
 		glPopMatrix();*/
 		/* ------------*/
 
-		///* UPPERBODY */
-		//glPushMatrix();
-		//	upper.hand();
-		//glPopMatrix();
-		///* ------------*/
-
-		/* UPPERBODY */
-		/*glPushMatrix();
-			upper.hand();
-		glPopMatrix();*/
-		/* ---------- */
-
 		
 		glPushMatrix();
 			glScalef(3, 3, 3);
@@ -246,6 +234,13 @@ void display() {
 			glPopMatrix();
 			glPushMatrix();
 				arm.lowerArmLeft();
+				glPushMatrix();
+					glRotatef(-90, 0, 1, 0);
+					glRotatef(90, 0, 0, 1);
+					glScalef(0.4, 0.4, 0.4);
+					glTranslatef(1.6, -0.3, -0.75);
+					upper.hand();	
+				glPopMatrix();
 			glPopMatrix();
 		glPopMatrix();
 			
