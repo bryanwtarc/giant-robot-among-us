@@ -1,12 +1,1 @@
-﻿  GIANT ROBOT.cpp
-C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(24,34): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(34,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(35,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(181,29): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(207,30): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(221,29): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(236,32): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(267,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(268,35): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(172,7): warning C4101: 'draw': unreferenced local variable
-  giant-robot-among-us.vcxproj -> C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe
+﻿  giant-robot-among-us.vcxproj -> C:\Users\rtcmb\source\repos\giant-robot-among-us\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe
