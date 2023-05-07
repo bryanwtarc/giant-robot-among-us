@@ -10,6 +10,9 @@
 
 class LondonBridge: public Draw{
 	public:
+		void tower();
+		void roof();
+		void pillar();
 		void londonBridge();
 };
 
