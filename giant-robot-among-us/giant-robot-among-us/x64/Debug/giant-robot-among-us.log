@@ -1,7 +1,5 @@
-﻿  GIANT ROBOT.cpp
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(22,34): warning C4305: 'initializing': truncation from 'double' to 'float'
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(31,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(32,24): warning C4305: 'initializing': truncation from 'double' to 'float'
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(169,29): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
-F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\GIANT ROBOT.cpp(162,7): warning C4101: 'draw': unreferenced local variable
+﻿  UpperBody.cpp
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\UpperBody.cpp(21,21): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\UpperBody.cpp(22,28): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+F:\temp\GP Assignment\giant-robot-among-us\giant-robot-among-us\UpperBody.cpp(23,11): warning C4305: 'argument': truncation from 'double' to 'float'
   giant-robot-among-us.vcxproj -> F:\temp\GP Assignment\giant-robot-among-us\x64\Debug\giant-robot-among-us.exe

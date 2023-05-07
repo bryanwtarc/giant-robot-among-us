@@ -30,7 +30,7 @@
     <ClCompile Include="legs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UpperBodycpp.cpp">
+    <ClCompile Include="UpperBody.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

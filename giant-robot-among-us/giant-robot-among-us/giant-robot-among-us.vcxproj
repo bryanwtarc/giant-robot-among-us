@@ -133,7 +133,7 @@
     <ClCompile Include="Head.cpp" />
     <ClCompile Include="legs.cpp" />
     <ClCompile Include="LondonBridge.cpp" />
-    <ClCompile Include="UpperBodycpp.cpp" />
+    <ClCompile Include="UpperBody.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawFunctions.h" />

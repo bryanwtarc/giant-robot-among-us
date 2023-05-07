@@ -11,6 +11,8 @@ class Legs: public Draw
 	public:
 		void gundamFeet();
 		void gundamRThigh();
+		void gundamLThigh();
+		void gundamCrotchPlate();
 };
 
 #endif

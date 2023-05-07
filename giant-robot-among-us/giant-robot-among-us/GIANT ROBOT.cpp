@@ -10,7 +10,7 @@
 
 #define WINDOW_TITLE "OpenGL Window"
 
-bool	bridgeOn = true;					//Toggle bridge
+bool	bridgeOn = false;					//Toggle bridge
 
 /* ROTATION VARIABLES */
 float	rotateX = 0, rotateY = 0, speed = 1.5;
@@ -164,6 +164,7 @@ void display() {
 	LondonBridge bridge;
 	Head head;
 	Legs leg;
+	UpperBody upper;
 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glEnable(GL_DEPTH_TEST);
@@ -189,17 +190,23 @@ void display() {
 		}
 		/* ----------- */
 
-		/* HEAD */
-		glPushMatrix();
-			head.gundamHead();
-		glPopMatrix();
-		/* ------------*/
+		///* HEAD */
+		//glPushMatrix();
+		//	head.gundamHead();
+		//glPopMatrix();
+		///* ------------*/
 
-		/* LEGS */
+		/* UPPERBODY */
 		glPushMatrix();
-			leg.gundamFeet();
+			upper.hand();
 		glPopMatrix();
-		/* ------------ */
+		/* ---------- */
+
+		///* LEGS */
+		//glPushMatrix();
+		//	leg.gundamFeet();
+		//glPopMatrix();
+		///* ------------ */
 
 		
 	glPopMatrix();
