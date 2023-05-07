@@ -204,8 +204,7 @@ void display() {
 
 		/* HEAD */
 		glPushMatrix();
-			glTranslatef(0.5, 8, 1.85);
-			glRotatef(90, 0, 1.0, 0);
+			glTranslatef(-1.85, 8, 0.3);
 			glScalef(1.5, 1.5, 1.5);
 			head.gundamHead();
 		glPopMatrix();
@@ -214,6 +213,7 @@ void display() {
 		
 		glPushMatrix();
 			glScalef(3, 3, 3);
+			glRotatef(-90, 0, 1.0, 0);
 			/* LEGS */
 			glPushMatrix();
 				//left feet
