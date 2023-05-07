@@ -81,7 +81,7 @@ void Legs::gundamLegs() {
 
 		//Face of feet
 		glBegin(GL_QUADS);
-		glColor3f(0.4, 0.4, 0.4);
+		glColor3f(0.2, 0.2, 1.0);
 		//face 1
 		glVertex3f(0.1, -0.2, 0.025);
 		glVertex3f(0.1, -0.15, 0.025);
@@ -153,10 +153,10 @@ void Legs::gundamLegs() {
 
 }
 
-void Legs::gundamCrotchPlate() {
+void Legs::gundamLowerLeg() {
 	glPushMatrix();
 		glScalef(1.2, 4.0, 1.0);
-		glTranslatef(0, 0.04, 0.77);
+		glTranslatef(0, 0.03, 0.77);
 		glColor3f(0, 0, 0);
 		lineCube(0.21);
 		glColor3f(1.0, 0.2, 0.3);
@@ -199,10 +199,26 @@ void Legs::gundamCrotchPlate() {
 }
 
 void Legs::gundamThigh() {
-
+	glPushMatrix();
+		glScalef(1.2, 3.5, 1.2);
+		glTranslatef(0, 0.35, 0.625);
+		glColor3f(0, 0, 0);
+		lineCube(0.21);
+		glColor3f(1.0, 0.2, 0.2);
+		cube(0.21);
+	glPopMatrix();
+	glPushMatrix();
+		//glScalef(1.2, 3.5, 1.2);
+		//glTranslatef(0, 0.35, 0.625);
+		//glColor3f(0, 0, 0);
+		//lineCube(0.18);
+		//glColor3f(0.2, 0.2, 1.0);
+		//cube(0.18);
+	glPopMatrix();
 }
 
 void Legs::mergeLegs() {
 	gundamLegs();
-	gundamCrotchPlate();
+	gundamLowerLeg();
+	gundamThigh();
 }
