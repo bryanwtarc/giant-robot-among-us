@@ -243,6 +243,9 @@ void display() {
 			glPushMatrix();
 				arm.lowerArmLeft();
 			glPopMatrix();
+			glPushMatrix();
+				arm.lowerWristLeft();
+			glPopMatrix();
 		glPopMatrix();
 			
 
