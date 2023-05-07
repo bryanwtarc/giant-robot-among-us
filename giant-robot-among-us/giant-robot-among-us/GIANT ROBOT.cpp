@@ -196,19 +196,27 @@ void display() {
 		//glPopMatrix();
 		///* ------------*/
 
-		///* UPPERBODY */
-		//glPushMatrix();
-		//	upper.hand();
-		//glPopMatrix();
-		///* ---------- */
+		/* UPPERBODY */
+	/*	glPushMatrix();
+			upper.hand();
+		glPopMatrix();*/
+		/* ---------- */
 
 		/* LEGS */
-		//glPushMatrix();
-		//	leg.gundamFeet();
-		//	glScalef(10, 10, 10);
-		//	leg.gundamLThigh();
-		//	leg.gundamRThigh();
-		//glPopMatrix();
+		glPushMatrix();
+		glScalef(10, 10, 10);
+		glPushMatrix();
+			glTranslatef(0, 0, -0.3);
+			leg.gundamFeet();
+		glPopMatrix();
+			leg.gundamLThigh();
+			leg.gundamRThigh();
+		glPushMatrix();
+		glPopMatrix();
+			
+			
+
+		glPopMatrix();
 		/* ------------ */
 
 		

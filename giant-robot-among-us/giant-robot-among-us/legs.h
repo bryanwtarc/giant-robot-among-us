@@ -9,9 +9,7 @@
 class Legs: public Draw
 {
 	public:
-		void gundamFeet();
-		void gundamRThigh();
-		void gundamLThigh();
+		void gundamLegs();
 		void gundamCrotchPlate();
 };
 
