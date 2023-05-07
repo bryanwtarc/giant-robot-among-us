@@ -242,6 +242,16 @@ void display() {
 					upper.hand();	
 				glPopMatrix();
 			glPopMatrix();
+			glPushMatrix();
+				arm.lowerWristLeft();
+			glPopMatrix();
+				arm.upperArmRight();
+			glPushMatrix();
+				arm.lowerArmRight();
+			glPopMatrix();
+			glPushMatrix();
+				arm.lowerWristRight();
+			glPopMatrix();
 		glPopMatrix();
 			
 
