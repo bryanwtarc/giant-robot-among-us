@@ -33,8 +33,7 @@ bool	lightOn = false;
 int		lightMode = 1;
 float	amb[] = { 1, 0, 0 },		//Red color ambient light
 		dif[] = { 1, 0, 0 },		//Red color diffuse light
-		posA[] = { 0, 0.8, 0 },		//Position for ambient lighting
-		posD[] = { 0, 0.8, 0 },		//Position for diffuse lighting
+		pos[] = { 0, 0.8, 0 },		//Position for lighting
 		ambM[] = { 0, 0.5, 1 },		//Light Blue color object material for ambient lighting
 		difM[] = { 0, 0.5, 1 };		//Light Blue color object material for diffuse lighting
 /* ------------------- */
@@ -50,9 +49,20 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 	case WM_KEYDOWN:   
 		if (wParam == VK_ESCAPE) PostQuitMessage(0);
 
-		else if (wParam == VK_SUBTRACT) bridgeOn = !bridgeOn;		//Toggle bridge on/off (Default: On)
+		else if (wParam == VK_SUBTRACT) bridgeOn = !bridgeOn;		//Toggle bridge on/off (Default: On)		(-)
 
-		else if (wParam == VK_TAB) lightOn = !lightOn;				//Switch lighting on/off (Default: Off)
+		/* LIGHTING CONTROL */
+		else if (wParam == VK_TAB) lightOn = !lightOn;				//Switch lighting on/off (Default: Off)		(TAB)
+		else if (wParam == VK_F1) lightMode = 1;					//Switch to ambient lighting				(F1)
+		else if (wParam == VK_F2) lightMode = 2;					//Switch to diffuse lighting				(F2)
+		else if (wParam == 0x49) pos[1] += speed;					//Move lighting position in Y+				(I)
+		else if (wParam == 0x4B) pos[1] -= speed;					//Move lighting position in Y-				(K)
+		else if (wParam == 0x4C) pos[0] += speed;					//Move lighting position in X+				(L)
+		else if (wParam == 0x4A) pos[0] -= speed;					//Move lighting position in X-				(J)
+		else if (wParam == 0x55) pos[2] += speed;					//Move lighting position in X+				(U)
+		else if (wParam == 0x4F) pos[2] -= speed;					//Move lighting position in X-				(O)
+
+		/* ----------------- */
 
 		/* MOVEMENT CONTROL */
 		//else if (wParam == 0x57) 	//W
@@ -62,15 +72,15 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		/* ---------------- */
 
 		/* PERSPECTIVE CONTROL */
-		else if (wParam == VK_LEFT) pRy += pRySpeed;			//Rotate projection in Y axis	(LEFT)
-		else if (wParam == VK_RIGHT) pRy -= pRySpeed;			//Rotate projection in Y axis	(RIGHT)
-		else if (wParam == VK_UP) pRx -= pRxSpeed;				//Rotate projection in X axis	(UP)
-		else if (wParam == VK_DOWN) pRx += pRxSpeed;			//Rotate projection in X axis	(DOWN)
+		else if (wParam == VK_LEFT) pRy += pRySpeed;			//Rotate projection in Y axis					(LEFT)
+		else if (wParam == VK_RIGHT) pRy -= pRySpeed;			//Rotate projection in Y axis					(RIGHT)
+		else if (wParam == VK_UP) pRx -= pRxSpeed;				//Rotate projection in X axis					(UP)
+		else if (wParam == VK_DOWN) pRx += pRxSpeed;			//Rotate projection in X axis					(DOWN)
 		else if (wParam == VK_HOME) pRz += pRzSpeed;			//Rotate projection in Z axis anti-clockwise 	(HOME)	
 		else if (wParam == VK_END) pRz -= pRzSpeed;				//Rotate projection in Z axis clockwise			(END)
-		else if (wParam == VK_CONTROL) isOrtho = !isOrtho;		//Switch Ortho/Perspective 
+		else if (wParam == VK_CONTROL) isOrtho = !isOrtho;		//Switch Ortho/Perspective						(CTRL)
 		else if (wParam == VK_RETURN) {
-			pRy = 0; pRx = 0; pRz = 0;							//Reset projection		(ENTER)
+			pRy = 0; pRx = 0; pRz = 0;							//Reset projection								(ENTER)
 		}
 		/* ------------------- */
 
@@ -138,17 +148,22 @@ void lighting() {
 		glDisable(GL_LIGHTING);				//Disable lighting for whole scene
 	}
 
-
-	////Light 0
-	//glLightfv(GL_LIGHT0, GL_AMBIENT, amb);		//Ambient Light with rgb {1, 0, 0} (RED)
-	//glLightfv(GL_LIGHT0, GL_POSITION, posA);	//Sets position {0, 0.8, 0} (ABOVE)
-	//glEnable(GL_LIGHT0);
-
-	//Light 1
-	glLightfv(GL_LIGHT1, GL_DIFFUSE, dif);		//Diffuse Light with rgb {1, 0, 0} (RED)
-	glLightfv(GL_LIGHT1, GL_POSITION, posD);	//Sets position 
-	glEnable(GL_LIGHT1);
-
+	switch (lightMode) {
+		case 1:
+			//Light 0
+			glDisable(GL_LIGHT1);
+			glLightfv(GL_LIGHT0, GL_AMBIENT, amb);		//Ambient Light with rgb {1, 0, 0} (RED)
+			glLightfv(GL_LIGHT0, GL_POSITION, pos);		//Sets position {0, 0.8, 0} (ABOVE)
+			glEnable(GL_LIGHT0);
+			break;
+		case 2:
+			//Light 1
+			glDisable(GL_LIGHT0);
+			glLightfv(GL_LIGHT1, GL_DIFFUSE, dif);		//Diffuse Light with rgb {1, 0, 0} (RED)
+			glLightfv(GL_LIGHT1, GL_POSITION, pos);		//Sets position {0, 0.8, 0} (ABOVE)
+			glEnable(GL_LIGHT1);
+			break;
+	}
 }
 
 void projection() {
