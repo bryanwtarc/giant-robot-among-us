@@ -178,6 +178,7 @@ void Draw::sphereWithoutGLU() {
 		}
 	}
 
+
 void Draw::linePyramid(float size) {
 
 		glBegin(GL_LINE_LOOP);
