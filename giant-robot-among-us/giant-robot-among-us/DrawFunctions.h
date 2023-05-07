@@ -12,6 +12,8 @@ class Draw {
 
 		void cube(float size);
 
+		void lineCube(float size);
+
 		void fullSphere(float r);
 
 		void lineSphere(float r);

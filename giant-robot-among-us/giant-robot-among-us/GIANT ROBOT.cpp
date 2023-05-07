@@ -16,7 +16,7 @@ float	rotateX = 0, rotateY = 0, speed = 1.5;
 bool	isOrtho = false;
 float	tx = 0, tz = 0, tSpeed = 0.5,			//translate in z-axis with tSpeed
 		Onear = -10, Ofar = 10,				//Ortho view's near and far
-		Pnear = 1, Pfar = 20,				//Perspective view's near and far
+		Pnear = 3, Pfar = 10,				//Perspective view's near and far
 		pTx = 0, pTy = 0, pTSpeed = 0.1,	//Translation(Tx, Ty) for projection
 		pRy = 0, pRySpeed = 2,				//Rotate projection in Y axis
 		pRx = 0, pRxSpeed = 2,				//Rotate projection in X axis
@@ -135,6 +135,7 @@ void lighting() {
 }
 
 void projection() {
+	double frustum = 1;
 	glMatrixMode(GL_PROJECTION);	//refer to projection matrix
 	glLoadIdentity();				//reset the projection matrix
 	glTranslatef(pTx, pTy, 0);		//translate projection
@@ -147,8 +148,8 @@ void projection() {
 	}
 	else {
 		//Perspective view : default
-		gluPerspective(20, 1, -1, 1);
-		glFrustum(-8, 8, -6, 6, Pnear, Pfar);
+		//gluPerspective(30, 1, -1, 1);
+		glFrustum(-frustum, frustum, -frustum, frustum, Pnear, Pfar);
 	}
 }
 
