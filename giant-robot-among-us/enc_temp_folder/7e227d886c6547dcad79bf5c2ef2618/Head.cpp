@@ -6,6 +6,5 @@
 #include "Head.h"
 
 void Head::gundamHead() {
-	glColor3f(1, 1, 1);
 	fullSphere(0.2);
 }

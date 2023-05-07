@@ -30,6 +30,9 @@
     <ClCompile Include="legs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UpperBodycpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawFunctions.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="legs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UpperBody.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

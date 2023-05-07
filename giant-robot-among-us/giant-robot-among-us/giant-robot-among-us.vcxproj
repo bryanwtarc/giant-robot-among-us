@@ -133,12 +133,14 @@
     <ClCompile Include="Head.cpp" />
     <ClCompile Include="legs.cpp" />
     <ClCompile Include="LondonBridge.cpp" />
+    <ClCompile Include="UpperBodycpp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DrawFunctions.h" />
     <ClInclude Include="Head.h" />
     <ClInclude Include="legs.h" />
     <ClInclude Include="LondonBridge.h" />
+    <ClInclude Include="UpperBody.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
