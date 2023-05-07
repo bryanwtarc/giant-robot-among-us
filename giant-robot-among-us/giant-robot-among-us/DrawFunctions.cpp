@@ -178,9 +178,6 @@ void Draw::sphereWithoutGLU() {
 		}
 	}
 
-void Draw::cuboids() {
-
-}
 
 void Draw::linePyramid(float size) {
 
