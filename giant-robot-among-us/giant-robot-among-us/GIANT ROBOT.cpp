@@ -19,7 +19,7 @@ HBITMAP hBMP;
 
 /* TRANSFORMATION VARIABLES */
 float	rotateX = 0, rotateY = 0, speed = 5,
-		ty = 0, tz = 0, tx = 0, tSpeed = 0.5;
+ty = 0, tz = 0, tx = 0, tSpeed = 0.5, beeg = 1.0;
 /*--------------------------*/
 
 /* ANIMATION VARIABLES */
@@ -111,6 +111,8 @@ LRESULT WINAPI WindowProcedure(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam
 		else if (wParam == VK_NUMPAD6) rotateY += speed;
 		else if (wParam == VK_NUMPAD8) rotateX -= speed;
 		else if (wParam == VK_NUMPAD2) rotateX += speed;
+		else if (wParam == VK_NUMPAD9) beeg += 1;
+		else if (wParam == VK_NUMPAD7) beeg -= 1;
 		/* ---------------- */
 
 		break;
@@ -387,6 +389,13 @@ void display() {
 			glPopMatrix();
 			glPushMatrix();
 			weapon.lightsaberR();
+			glPopMatrix();
+			glPushMatrix();
+				weapon.gun();
+			glPopMatrix();
+			glPushMatrix();
+			glScalef(beeg, beeg, beeg);
+			weapon.shield();
 			glPopMatrix();
 		glPopMatrix();
 
